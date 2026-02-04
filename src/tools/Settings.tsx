@@ -411,13 +411,13 @@ const Settings: React.FC = () => {
         {/* 外观设置 */}
         <Card>
           <div className='p-6'>
-            <h3 className='text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4'>
+            <h3 className='text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4'>
               外观设置
             </h3>
 
             <div className='space-y-4'>
               <div>
-                <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2'>
+                <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2'>
                   主题模式
                 </label>
                 <div className='flex space-x-4'>
@@ -425,10 +425,10 @@ const Settings: React.FC = () => {
                     <button
                       key={themeOption}
                       onClick={() => handleThemeChange(themeOption)}
-                      className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                         settings.theme === themeOption
                           ? 'bg-blue-500 text-white'
-                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+                          : 'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-gray-600'
                       }`}>
                       {themeOption === 'light' && '☀️ 浅色'}
                       {themeOption === 'dark' && '🌙 深色'}
@@ -436,7 +436,7 @@ const Settings: React.FC = () => {
                     </button>
                   ))}
                 </div>
-                <p className='text-xs text-gray-500 dark:text-gray-400 mt-2'>
+                <p className='text-xs text-slate-500 dark:text-slate-400 mt-2'>
                   当前主题: {currentTheme === 'dark' ? '深色' : '浅色'}
                 </p>
               </div>
@@ -447,7 +447,7 @@ const Settings: React.FC = () => {
         {/* 系统设置 */}
         <Card>
           <div className='p-6'>
-            <h3 className='text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4'>
+            <h3 className='text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4'>
               系统设置
             </h3>
 
@@ -455,10 +455,10 @@ const Settings: React.FC = () => {
               {/* 托盘设置 */}
               <div className='flex items-center justify-between'>
                 <div>
-                  <label className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+                  <label className='text-sm font-medium text-slate-700 dark:text-slate-300'>
                     显示系统托盘图标
                   </label>
-                  <p className='text-xs text-gray-500 dark:text-gray-400'>
+                  <p className='text-xs text-slate-500 dark:text-slate-400'>
                     在系统托盘中显示应用图标，便于快速访问
                   </p>
                 </div>
@@ -474,7 +474,7 @@ const Settings: React.FC = () => {
                     className={`w-11 h-6 rounded-full transition-colors ${
                       settings.showTray
                         ? 'bg-blue-500'
-                        : 'bg-gray-300 dark:bg-gray-600'
+                        : 'bg-slate-300 dark:bg-gray-600'
                     } ${loading ? 'opacity-50' : ''}`}>
                     <div
                       className={`w-5 h-5 bg-white rounded-full shadow transform transition-transform ${
@@ -488,10 +488,10 @@ const Settings: React.FC = () => {
               {/* 开机自启 */}
               <div className='flex items-center justify-between'>
                 <div>
-                  <label className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+                  <label className='text-sm font-medium text-slate-700 dark:text-slate-300'>
                     开机自动启动
                   </label>
-                  <p className='text-xs text-gray-500 dark:text-gray-400'>
+                  <p className='text-xs text-slate-500 dark:text-slate-400'>
                     系统启动时自动运行此应用程序
                   </p>
                 </div>
@@ -507,7 +507,7 @@ const Settings: React.FC = () => {
                     className={`w-11 h-6 rounded-full transition-colors ${
                       settings.autoStart
                         ? 'bg-blue-500'
-                        : 'bg-gray-300 dark:bg-gray-600'
+                        : 'bg-slate-300 dark:bg-gray-600'
                     } ${loading ? 'opacity-50' : ''}`}>
                     <div
                       className={`w-5 h-5 bg-white rounded-full shadow transform transition-transform ${
@@ -524,16 +524,16 @@ const Settings: React.FC = () => {
                   <label
                     className={`text-sm font-medium ${
                       settings.showTray
-                        ? 'text-gray-700 dark:text-gray-300'
-                        : 'text-gray-400 dark:text-gray-500'
+                        ? 'text-slate-700 dark:text-slate-300'
+                        : 'text-slate-400 dark:text-slate-500'
                     }`}>
                     启动时最小化到托盘
                   </label>
                   <p
                     className={`text-xs ${
                       settings.showTray
-                        ? 'text-gray-500 dark:text-gray-400'
-                        : 'text-gray-400 dark:text-gray-500'
+                        ? 'text-slate-500 dark:text-slate-400'
+                        : 'text-slate-400 dark:text-slate-500'
                     }`}>
                     应用程序启动时直接最小化到系统托盘
                   </p>
@@ -552,7 +552,7 @@ const Settings: React.FC = () => {
                     className={`w-11 h-6 rounded-full transition-colors ${
                       settings.startMinimized && settings.showTray
                         ? 'bg-blue-500'
-                        : 'bg-gray-300 dark:bg-gray-600'
+                        : 'bg-slate-300 dark:bg-gray-600'
                     } ${loading || !settings.showTray ? 'opacity-50' : ''}`}>
                     <div
                       className={`w-5 h-5 bg-white rounded-full shadow transform transition-transform ${
@@ -571,16 +571,16 @@ const Settings: React.FC = () => {
                   <label
                     className={`text-sm font-medium ${
                       settings.showTray
-                        ? 'text-gray-700 dark:text-gray-300'
-                        : 'text-gray-400 dark:text-gray-500'
+                        ? 'text-slate-700 dark:text-slate-300'
+                        : 'text-slate-400 dark:text-slate-500'
                     }`}>
                     关闭时最小化到托盘
                   </label>
                   <p
                     className={`text-xs ${
                       settings.showTray
-                        ? 'text-gray-500 dark:text-gray-400'
-                        : 'text-gray-400 dark:text-gray-500'
+                        ? 'text-slate-500 dark:text-slate-400'
+                        : 'text-slate-400 dark:text-slate-500'
                     }`}>
                     关闭窗口时最小化到系统托盘而非退出程序
                   </p>
@@ -597,7 +597,7 @@ const Settings: React.FC = () => {
                     className={`w-11 h-6 rounded-full transition-colors ${
                       settings.closeToTray && settings.showTray
                         ? 'bg-blue-500'
-                        : 'bg-gray-300 dark:bg-gray-600'
+                        : 'bg-slate-300 dark:bg-gray-600'
                     } ${loading || !settings.showTray ? 'opacity-50' : ''}`}>
                     <div
                       className={`w-5 h-5 bg-white rounded-full shadow transform transition-transform ${
@@ -616,7 +616,7 @@ const Settings: React.FC = () => {
         {/* 快捷键设置 */}
         <Card>
           <div className='p-6'>
-            <h3 className='text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4'>
+            <h3 className='text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4'>
               快捷键设置
             </h3>
 
@@ -624,23 +624,23 @@ const Settings: React.FC = () => {
               {/* 全局快捷键设置 */}
               <div className='flex items-center justify-between'>
                 <div>
-                  <label className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+                  <label className='text-sm font-medium text-slate-700 dark:text-slate-300'>
                     快速调出工具
                   </label>
-                  <p className='text-xs text-gray-500 dark:text-gray-400'>
+                  <p className='text-xs text-slate-500 dark:text-slate-400'>
                     设置全局快捷键来快速显示/隐藏应用程序
                   </p>
                 </div>
                 <div className='flex items-center space-x-3'>
-                  <div className='px-3 py-2 bg-gray-100 dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 min-w-[120px] text-center'>
-                    <span className='text-sm font-mono text-gray-800 dark:text-gray-200'>
+                  <div className='px-3 py-2 bg-slate-100 dark:bg-slate-700 rounded-lg border border-slate-300 dark:border-slate-600 min-w-[120px] text-center'>
+                    <span className='text-sm font-mono text-slate-800 dark:text-slate-200'>
                       {getHotkeyDisplayText(settings.hotkey)}
                     </span>
                   </div>
                   <button
                     onClick={handleHotkeyRecord}
                     disabled={isRecordingHotkey}
-                    className={`px-3 py-2 text-sm rounded-md transition-colors ${
+                    className={`px-3 py-2 text-sm rounded-lg transition-colors ${
                       isRecordingHotkey
                         ? 'bg-orange-500 text-white cursor-not-allowed'
                         : 'bg-blue-500 hover:bg-blue-600 text-white'
@@ -651,7 +651,7 @@ const Settings: React.FC = () => {
               </div>
 
               {isRecordingHotkey && (
-                <div className='p-3 bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-md'>
+                <div className='p-3 bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg'>
                   <p className='text-sm text-orange-700 dark:text-orange-300'>
                     🎯
                     请按下新的快捷键组合（必须包含修饰键：Ctrl、Alt/Option、Cmd）
@@ -662,7 +662,7 @@ const Settings: React.FC = () => {
                 </div>
               )}
 
-              <div className='p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-md'>
+              <div className='p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg'>
                 <p className='text-sm text-blue-700 dark:text-blue-300'>
                   💡 <strong>使用说明：</strong>
                 </p>
@@ -681,32 +681,32 @@ const Settings: React.FC = () => {
         {/* 关于信息 */}
         <Card>
           <div className='p-6'>
-            <h3 className='text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4'>
+            <h3 className='text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4'>
               关于应用
             </h3>
 
             <div className='space-y-3'>
               <div className='flex justify-between'>
-                <span className='text-sm text-gray-600 dark:text-gray-400'>
+                <span className='text-sm text-slate-600 dark:text-slate-400'>
                   应用名称
                 </span>
-                <span className='text-sm font-medium text-gray-900 dark:text-gray-100'>
+                <span className='text-sm font-medium text-slate-900 dark:text-slate-100'>
                   开发者工具箱
                 </span>
               </div>
               <div className='flex justify-between'>
-                <span className='text-sm text-gray-600 dark:text-gray-400'>
+                <span className='text-sm text-slate-600 dark:text-slate-400'>
                   版本
                 </span>
-                <span className='text-sm font-medium text-gray-900 dark:text-gray-100'>
+                <span className='text-sm font-medium text-slate-900 dark:text-slate-100'>
                   1.0.0
                 </span>
               </div>
               <div className='flex justify-between'>
-                <span className='text-sm text-gray-600 dark:text-gray-400'>
+                <span className='text-sm text-slate-600 dark:text-slate-400'>
                   技术栈
                 </span>
-                <span className='text-sm font-medium text-gray-900 dark:text-gray-100'>
+                <span className='text-sm font-medium text-slate-900 dark:text-slate-100'>
                   Tauri + React + TypeScript
                 </span>
               </div>

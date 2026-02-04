@@ -240,12 +240,12 @@ const PasswordHasher: React.FC = () => {
       description='提供 bcrypt、PBKDF2、SHA-256、SHA-512、MD5 等多种加密算法，支持密码加密和验证功能。'>
       <div className='flex flex-col h-full overflow-hidden'>
         {/* Tab 导航 */}
-        <div className='flex border-b border-gray-200 dark:border-gray-600 mb-6'>
+        <div className='flex border-b border-slate-200 dark:border-slate-600 mb-6'>
           <button
             className={`px-6 py-3 font-medium text-sm transition-colors ${
               activeTab === 'hash'
                 ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400'
-                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
+                : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
             }`}
             onClick={() => setActiveTab('hash')}>
             密码加密
@@ -254,7 +254,7 @@ const PasswordHasher: React.FC = () => {
             className={`px-6 py-3 font-medium text-sm transition-colors ${
               activeTab === 'verify'
                 ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400'
-                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
+                : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
             }`}
             onClick={() => setActiveTab('verify')}>
             密码验证
@@ -266,8 +266,8 @@ const PasswordHasher: React.FC = () => {
           {activeTab === 'hash' && (
             <div className='space-y-6'>
               {/* 算法选择 */}
-              <div className='bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-600 p-4'>
-                <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3'>
+              <div className='bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600 p-4'>
+                <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3'>
                   选择加密算法
                 </label>
                 <div className='grid grid-cols-2 md:grid-cols-3 gap-3'>
@@ -283,10 +283,10 @@ const PasswordHasher: React.FC = () => {
                       className={`p-3 rounded-lg border-2 transition-all text-left ${
                         algorithm === alg
                           ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
-                          : 'border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500'
+                          : 'border-slate-200 dark:border-slate-600 hover:border-slate-300 dark:hover:border-gray-500'
                       }`}>
                       <div className='flex items-center justify-between mb-1'>
-                        <span className='font-medium text-gray-900 dark:text-white'>
+                        <span className='font-medium text-slate-900 dark:text-white'>
                           {info.name}
                         </span>
                         {info.secure ? (
@@ -299,7 +299,7 @@ const PasswordHasher: React.FC = () => {
                           </span>
                         )}
                       </div>
-                      <p className='text-xs text-gray-600 dark:text-gray-400'>
+                      <p className='text-xs text-slate-600 dark:text-slate-400'>
                         {info.useCase}
                       </p>
                     </button>
@@ -308,8 +308,8 @@ const PasswordHasher: React.FC = () => {
               </div>
 
               {/* 密码输入和参数设置 */}
-              <div className='bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-600 p-4'>
-                <h3 className='text-lg font-medium text-gray-900 dark:text-white mb-4'>
+              <div className='bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600 p-4'>
+                <h3 className='text-lg font-medium text-slate-900 dark:text-white mb-4'>
                   加密参数
                 </h3>
 
@@ -318,7 +318,7 @@ const PasswordHasher: React.FC = () => {
                   <div>
                     <label
                       htmlFor='password'
-                      className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+                      className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1'>
                       输入密码
                     </label>
                     <input
@@ -327,7 +327,7 @@ const PasswordHasher: React.FC = () => {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder='请输入要加密的密码...'
-                      className='w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                      className='w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-500'
                     />
                   </div>
 
@@ -336,7 +336,7 @@ const PasswordHasher: React.FC = () => {
                     <div>
                       <label
                         htmlFor='strengthParam'
-                        className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+                        className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1'>
                         {algorithm === 'bcrypt'
                           ? '盐值轮数 (Salt Rounds)'
                           : '迭代次数 (Iterations)'}
@@ -363,9 +363,9 @@ const PasswordHasher: React.FC = () => {
                             ? '输入盐值轮数 (4-20)'
                             : '输入迭代次数 (1000-1000000)'
                         }
-                        className='w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                        className='w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-500'
                       />
-                      <p className='text-xs text-gray-500 dark:text-gray-400 mt-2'>
+                      <p className='text-xs text-slate-500 dark:text-slate-400 mt-2'>
                         {algorithm === 'bcrypt'
                           ? '盐值轮数越高，安全性越好，但加密时间越长。推荐值为 10-12。范围：4 - 20'
                           : '迭代次数越多，安全性越好，但加密时间越长。推荐值为 10,000 以上。范围：1,000 - 1,000,000'}
@@ -394,9 +394,9 @@ const PasswordHasher: React.FC = () => {
 
               {/* 加密结果 */}
               {hash && (
-                <div className='bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-600 p-4'>
+                <div className='bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600 p-4'>
                   <div className='flex items-center justify-between mb-2'>
-                    <h3 className='text-lg font-medium text-gray-900 dark:text-white'>
+                    <h3 className='text-lg font-medium text-slate-900 dark:text-white'>
                       加密结果
                     </h3>
                     <Button
@@ -414,10 +414,10 @@ const PasswordHasher: React.FC = () => {
                       {copied ? '已复制' : '复制'}
                     </Button>
                   </div>
-                  <div className='bg-gray-50 dark:bg-gray-700 rounded-lg p-4 font-mono text-sm break-all text-gray-900 dark:text-gray-100'>
+                  <div className='bg-slate-50 dark:bg-slate-700 rounded-lg p-4 font-mono text-sm break-all text-slate-900 dark:text-slate-100'>
                     {hash}
                   </div>
-                  <div className='mt-3 text-xs text-gray-500 dark:text-gray-400'>
+                  <div className='mt-3 text-xs text-slate-500 dark:text-slate-400'>
                     算法: {algorithmInfoMap[algorithm].name} | 哈希长度:{' '}
                     {hash.length} 字符
                   </div>
@@ -443,8 +443,8 @@ const PasswordHasher: React.FC = () => {
           {activeTab === 'verify' && (
             <div className='space-y-6'>
               {/* 算法选择 */}
-              <div className='bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-600 p-4'>
-                <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3'>
+              <div className='bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600 p-4'>
+                <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3'>
                   选择加密算法
                 </label>
                 <div className='grid grid-cols-2 md:grid-cols-3 gap-3'>
@@ -460,10 +460,10 @@ const PasswordHasher: React.FC = () => {
                       className={`p-3 rounded-lg border-2 transition-all text-left ${
                         verifyAlgorithm === alg
                           ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
-                          : 'border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500'
+                          : 'border-slate-200 dark:border-slate-600 hover:border-slate-300 dark:hover:border-gray-500'
                       }`}>
                       <div className='flex items-center justify-between mb-1'>
-                        <span className='font-medium text-gray-900 dark:text-white'>
+                        <span className='font-medium text-slate-900 dark:text-white'>
                           {info.name}
                         </span>
                         {info.secure ? (
@@ -476,7 +476,7 @@ const PasswordHasher: React.FC = () => {
                           </span>
                         )}
                       </div>
-                      <p className='text-xs text-gray-600 dark:text-gray-400'>
+                      <p className='text-xs text-slate-600 dark:text-slate-400'>
                         {info.useCase}
                       </p>
                     </button>
@@ -485,8 +485,8 @@ const PasswordHasher: React.FC = () => {
               </div>
 
               {/* 验证输入 */}
-              <div className='bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-600 p-4'>
-                <h3 className='text-lg font-medium text-gray-900 dark:text-white mb-4'>
+              <div className='bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600 p-4'>
+                <h3 className='text-lg font-medium text-slate-900 dark:text-white mb-4'>
                   验证参数
                 </h3>
 
@@ -495,7 +495,7 @@ const PasswordHasher: React.FC = () => {
                   <div>
                     <label
                       htmlFor='verifyPassword'
-                      className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+                      className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1'>
                       输入要验证的密码
                     </label>
                     <input
@@ -504,7 +504,7 @@ const PasswordHasher: React.FC = () => {
                       value={verifyPassword}
                       onChange={(e) => setVerifyPassword(e.target.value)}
                       placeholder='请输入要验证的密码...'
-                      className='w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                      className='w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-500'
                     />
                   </div>
 
@@ -512,7 +512,7 @@ const PasswordHasher: React.FC = () => {
                   <div>
                     <label
                       htmlFor='verifyHash'
-                      className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+                      className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1'>
                       输入哈希值
                     </label>
                     <textarea
@@ -521,7 +521,7 @@ const PasswordHasher: React.FC = () => {
                       onChange={(e) => setVerifyHash(e.target.value)}
                       placeholder='请输入要验证的哈希值...'
                       rows={3}
-                      className='w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm'
+                      className='w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-500 font-mono text-sm'
                     />
                   </div>
 
@@ -531,14 +531,14 @@ const PasswordHasher: React.FC = () => {
                     <div>
                       <label
                         htmlFor='verifyStrengthParam'
-                        className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+                        className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1'>
                         {verifyAlgorithm === 'bcrypt'
                           ? '盐值轮数 (Salt Rounds)'
                           : '迭代次数 (Iterations)'}
                       </label>
                       {verifyAlgorithm === 'bcrypt' ? (
-                        <div className='bg-gray-50 dark:bg-gray-700 rounded-lg p-3 border border-gray-200 dark:border-gray-600'>
-                          <p className='text-sm text-gray-600 dark:text-gray-400'>
+                        <div className='bg-slate-50 dark:bg-slate-700 rounded-lg p-3 border border-slate-200 dark:border-slate-600'>
+                          <p className='text-sm text-slate-600 dark:text-slate-400'>
                             bcrypt 的盐值轮数已包含在哈希值中，验证时无需手动设置
                           </p>
                         </div>
@@ -558,9 +558,9 @@ const PasswordHasher: React.FC = () => {
                               }
                             }}
                             placeholder='输入迭代次数 (1000-1000000)'
-                            className='w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                            className='w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-500'
                           />
-                          <p className='text-xs text-gray-500 dark:text-gray-400 mt-2'>
+                          <p className='text-xs text-slate-500 dark:text-slate-400 mt-2'>
                             验证时需要使用与加密时相同的迭代次数。范围：1,000 -
                             1,000,000
                           </p>
@@ -590,8 +590,8 @@ const PasswordHasher: React.FC = () => {
 
               {/* 验证结果 */}
               {(verifyResult.isValid !== null || verifyResult.message) && (
-                <div className='bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-600 p-4'>
-                  <h3 className='text-lg font-medium text-gray-900 dark:text-white mb-3'>
+                <div className='bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600 p-4'>
+                  <h3 className='text-lg font-medium text-slate-900 dark:text-white mb-3'>
                     验证结果
                   </h3>
                   <div

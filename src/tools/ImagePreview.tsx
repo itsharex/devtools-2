@@ -449,13 +449,13 @@ const ImagePreview: React.FC = () => {
               value={inputUrl}
               onChange={(e) => setInputUrl(e.target.value)}
               placeholder='粘贴图片 URL 或 data: URL...'
-              className='flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+              className='flex-1 px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
               onKeyDown={(e) => e.key === 'Enter' && handleUrlSubmit()}
             />
             <Button onClick={handleUrlSubmit} disabled={!inputUrl.trim()}>
               加载
             </Button>
-            <label className='px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-500 cursor-pointer transition-colors'>
+            <label className='px-4 py-2 bg-slate-200 dark:bg-gray-600 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-500 cursor-pointer transition-colors'>
               上传文件
               <input
                 type='file'
@@ -467,7 +467,7 @@ const ImagePreview: React.FC = () => {
           </div>
 
           {/* 快捷提示 */}
-          <div className='text-sm text-gray-500 dark:text-gray-400'>
+          <div className='text-sm text-slate-500 dark:text-slate-400'>
             💡 提示：直接粘贴图片（Ctrl+V）可快速预览，或使用 Ctrl+滚轮 缩放
           </div>
 
@@ -484,14 +484,14 @@ const ImagePreview: React.FC = () => {
           <div className='lg:col-span-3 min-h-0'>
             <div
               ref={imageContainerRef}
-              className='h-full border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 overflow-hidden relative'
+              className='h-full border border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800 overflow-hidden relative'
               onWheel={handleWheel}
               onMouseMove={handleMouseMove}
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseUp}>
               {isLoading ? (
                 <div className='flex items-center justify-center h-full'>
-                  <div className='text-gray-500 dark:text-gray-400'>
+                  <div className='text-slate-500 dark:text-slate-400'>
                     加载中...
                   </div>
                 </div>
@@ -514,7 +514,7 @@ const ImagePreview: React.FC = () => {
                 </div>
               ) : (
                 <div className='flex items-center justify-center h-full'>
-                  <div className='text-center text-gray-400 dark:text-gray-500'>
+                  <div className='text-center text-slate-400 dark:text-slate-500'>
                     <svg
                       className='w-16 h-16 mx-auto mb-4'
                       fill='none'
@@ -537,17 +537,17 @@ const ImagePreview: React.FC = () => {
                 <div className='absolute top-4 right-4 flex space-x-2'>
                   <button
                     onClick={resetView}
-                    className='px-3 py-1 bg-white dark:bg-gray-700 shadow rounded-lg text-sm text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors'>
+                    className='px-3 py-1 bg-white dark:bg-slate-700 shadow rounded-lg text-sm text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-gray-600 transition-colors'>
                     重置
                   </button>
                   <button
                     onClick={() => setIsFullscreen(true)}
-                    className='px-3 py-1 bg-white dark:bg-gray-700 shadow rounded-lg text-sm text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors'>
+                    className='px-3 py-1 bg-white dark:bg-slate-700 shadow rounded-lg text-sm text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-gray-600 transition-colors'>
                     全屏
                   </button>
                   <button
                     onClick={() => imageSrc && copyToClipboard(imageSrc)}
-                    className='px-3 py-1 bg-white dark:bg-gray-700 shadow rounded-lg text-sm text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors'>
+                    className='px-3 py-1 bg-white dark:bg-slate-700 shadow rounded-lg text-sm text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-gray-600 transition-colors'>
                     复制 URL
                   </button>
                 </div>
@@ -567,41 +567,41 @@ const ImagePreview: React.FC = () => {
 
           {/* 信息面板 */}
           <div className='lg:col-span-1 min-h-0'>
-            <div className='h-full border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 p-4 space-y-6'>
+            <div className='h-full border border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800 p-4 space-y-6'>
               {/* 图片信息 */}
               <div>
-                <h3 className='text-lg font-medium text-gray-900 dark:text-white mb-3'>
+                <h3 className='text-lg font-medium text-slate-900 dark:text-white mb-3'>
                   图片信息
                 </h3>
                 {imageInfo ? (
                   <div className='space-y-2 text-sm'>
                     <div className='flex justify-between'>
-                      <span className='text-gray-600 dark:text-gray-400'>
+                      <span className='text-slate-600 dark:text-slate-400'>
                         尺寸:
                       </span>
-                      <span className='text-gray-900 dark:text-white font-medium'>
+                      <span className='text-slate-900 dark:text-white font-medium'>
                         {imageInfo.width} × {imageInfo.height}
                       </span>
                     </div>
                     <div className='flex justify-between'>
-                      <span className='text-gray-600 dark:text-gray-400'>
+                      <span className='text-slate-600 dark:text-slate-400'>
                         格式:
                       </span>
-                      <span className='text-gray-900 dark:text-white font-medium uppercase'>
+                      <span className='text-slate-900 dark:text-white font-medium uppercase'>
                         {imageInfo.format}
                       </span>
                     </div>
                     <div className='flex justify-between'>
-                      <span className='text-gray-600 dark:text-gray-400'>
+                      <span className='text-slate-600 dark:text-slate-400'>
                         大小:
                       </span>
-                      <span className='text-gray-900 dark:text-white font-medium'>
+                      <span className='text-slate-900 dark:text-white font-medium'>
                         {formatFileSize(imageInfo.size)}
                       </span>
                     </div>
                   </div>
                 ) : (
-                  <p className='text-sm text-gray-500 dark:text-gray-400'>
+                  <p className='text-sm text-slate-500 dark:text-slate-400'>
                     暂无图片信息
                   </p>
                 )}
@@ -609,15 +609,15 @@ const ImagePreview: React.FC = () => {
 
               {/* 视图控制 */}
               <div>
-                <h3 className='text-lg font-medium text-gray-900 dark:text-white mb-3'>
+                <h3 className='text-lg font-medium text-slate-900 dark:text-white mb-3'>
                   视图控制
                 </h3>
                 <div className='space-y-2'>
                   <div className='flex items-center justify-between text-sm'>
-                    <span className='text-gray-600 dark:text-gray-400'>
+                    <span className='text-slate-600 dark:text-slate-400'>
                       缩放:
                     </span>
-                    <span className='text-gray-900 dark:text-white font-medium'>
+                    <span className='text-slate-900 dark:text-white font-medium'>
                       {getScalePercentage()}
                     </span>
                   </div>
@@ -629,7 +629,7 @@ const ImagePreview: React.FC = () => {
                           scale: Math.min(5, viewState.scale + 0.2),
                         })
                       }
-                      className='w-full px-3 py-2 bg-white dark:bg-gray-700 shadow rounded text-sm text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors'>
+                      className='w-full px-3 py-2 bg-white dark:bg-slate-700 shadow rounded text-sm text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-gray-600 transition-colors'>
                       放大
                     </button>
                     <button
@@ -639,12 +639,12 @@ const ImagePreview: React.FC = () => {
                           scale: Math.max(0.5, viewState.scale - 0.2),
                         })
                       }
-                      className='w-full px-3 py-2 bg-white dark:bg-gray-700 shadow rounded text-sm text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors'>
+                      className='w-full px-3 py-2 bg-white dark:bg-slate-700 shadow rounded text-sm text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-gray-600 transition-colors'>
                       缩小
                     </button>
                     <button
                       onClick={resetView}
-                      className='w-full px-3 py-2 bg-white dark:bg-gray-700 shadow rounded text-sm text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors'>
+                      className='w-full px-3 py-2 bg-white dark:bg-slate-700 shadow rounded text-sm text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-gray-600 transition-colors'>
                       100%
                     </button>
                   </div>
@@ -653,12 +653,12 @@ const ImagePreview: React.FC = () => {
 
               {/* 保存设置 */}
               <div>
-                <h3 className='text-lg font-medium text-gray-900 dark:text-white mb-3'>
+                <h3 className='text-lg font-medium text-slate-900 dark:text-white mb-3'>
                   保存设置
                 </h3>
                 <div className='space-y-3'>
                   <div>
-                    <label className='block text-sm text-gray-600 dark:text-gray-400 mb-1'>
+                    <label className='block text-sm text-slate-600 dark:text-slate-400 mb-1'>
                       格式
                     </label>
                     <select
@@ -669,7 +669,7 @@ const ImagePreview: React.FC = () => {
                           format: e.target.value as any,
                         })
                       }
-                      className='w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white'>
+                      className='w-full px-3 py-2 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 dark:text-white'>
                       <option value='png'>PNG (无损)</option>
                       <option value='jpeg'>JPEG (有损)</option>
                       <option value='gif'>GIF (动图)</option>
@@ -679,7 +679,7 @@ const ImagePreview: React.FC = () => {
 
                   {['jpeg', 'webp'].includes(saveOptions.format) && (
                     <div>
-                      <label className='block text-sm text-gray-600 dark:text-gray-400 mb-1'>
+                      <label className='block text-sm text-slate-600 dark:text-slate-400 mb-1'>
                         质量: {saveOptions.quality}%
                       </label>
                       <input
@@ -699,7 +699,7 @@ const ImagePreview: React.FC = () => {
                   )}
 
                   <div>
-                    <label className='block text-sm text-gray-600 dark:text-gray-400 mb-1'>
+                    <label className='block text-sm text-slate-600 dark:text-slate-400 mb-1'>
                       文件名
                     </label>
                     <input
@@ -711,7 +711,7 @@ const ImagePreview: React.FC = () => {
                           filename: e.target.value,
                         })
                       }
-                      className='w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white'
+                      className='w-full px-3 py-2 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 dark:text-white'
                     />
                   </div>
 
@@ -722,7 +722,7 @@ const ImagePreview: React.FC = () => {
                     {isSaving ? '正在保存...' : '保存图片到指定目录'}
                   </Button>
                   {!isSaving && (
-                    <p className='text-xs text-gray-500 dark:text-gray-400 text-center'>
+                    <p className='text-xs text-slate-500 dark:text-slate-400 text-center'>
                       点击后将弹出保存对话框，您可以自由选择保存目录和文件名
                     </p>
                   )}

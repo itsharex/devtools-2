@@ -203,12 +203,12 @@ const AesCrypto: React.FC = () => {
       title='AES 加密/解密工具'
       subtitle='使用 AES 算法对文本进行加密和解密，支持多种模式和配置'>
       {/* 标签页切换 */}
-      <div className='flex border-b border-gray-200 dark:border-gray-700 mb-4'>
+      <div className='flex border-b border-slate-200 dark:border-slate-700 mb-4'>
         <button
           className={`px-4 py-2 font-medium text-sm ${
             activeTab === 'encrypt'
               ? 'border-b-2 border-blue-500 text-blue-600 dark:text-blue-400'
-              : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
+              : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
           }`}
           onClick={() => setActiveTab('encrypt')}>
           加密
@@ -217,7 +217,7 @@ const AesCrypto: React.FC = () => {
           className={`px-4 py-2 font-medium text-sm ${
             activeTab === 'decrypt'
               ? 'border-b-2 border-blue-500 text-blue-600 dark:text-blue-400'
-              : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
+              : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
           }`}
           onClick={() => setActiveTab('decrypt')}>
           解密
@@ -225,13 +225,13 @@ const AesCrypto: React.FC = () => {
       </div>
 
       {/* AES 配置区域 */}
-      <div className='bg-gray-50 dark:bg-gray-800 p-4 rounded-lg mb-4'>
-        <h3 className='text-lg font-medium mb-3 text-gray-900 dark:text-gray-100'>
+      <div className='bg-slate-50 dark:bg-slate-800 p-4 rounded-lg mb-4'>
+        <h3 className='text-lg font-medium mb-3 text-slate-900 dark:text-slate-100'>
           AES 配置
         </h3>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
           <div>
-            <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+            <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1'>
               模式
             </label>
             <select
@@ -239,7 +239,7 @@ const AesCrypto: React.FC = () => {
               onChange={(e) =>
                 setAesConfig({ ...aesConfig, mode: e.target.value as AesMode })
               }
-              className='w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white'>
+              className='w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg shadow-sm focus:outline-none focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:text-white'>
               <option value='CBC'>CBC</option>
               <option value='ECB'>ECB</option>
               <option value='CFB'>CFB</option>
@@ -248,7 +248,7 @@ const AesCrypto: React.FC = () => {
             </select>
           </div>
           <div>
-            <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+            <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1'>
               密钥长度
             </label>
             <select
@@ -259,14 +259,14 @@ const AesCrypto: React.FC = () => {
                   keySize: Number(e.target.value) as 128 | 192 | 256,
                 })
               }
-              className='w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white'>
+              className='w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg shadow-sm focus:outline-none focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:text-white'>
               <option value={128}>128 位</option>
               <option value={192}>192 位</option>
               <option value={256}>256 位</option>
             </select>
           </div>
           <div>
-            <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+            <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1'>
               填充模式
             </label>
             <select
@@ -274,7 +274,7 @@ const AesCrypto: React.FC = () => {
               onChange={(e) =>
                 setAesConfig({ ...aesConfig, padding: e.target.value as any })
               }
-              className='w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white'>
+              className='w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg shadow-sm focus:outline-none focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:text-white'>
               <option value='Pkcs7'>PKCS#7</option>
               <option value='Iso97971'>ISO/IEC 9797-1</option>
               <option value='AnsiX923'>ANSI X9.23</option>
@@ -292,21 +292,21 @@ const AesCrypto: React.FC = () => {
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
             <div>
               <div className='mb-2'>
-                <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+                <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1'>
                   要加密的文本
                 </label>
                 <textarea
                   value={encryptText}
                   onChange={(e) => setEncryptText(e.target.value)}
                   placeholder='请输入要加密的文本'
-                  className='w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white'
+                  className='w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg shadow-sm focus:outline-none focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:text-white'
                   rows={4}
                 />
               </div>
             </div>
             <div>
               <div className='mb-2'>
-                <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+                <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1'>
                   加密结果
                 </label>
                 <div className='relative'>
@@ -314,7 +314,7 @@ const AesCrypto: React.FC = () => {
                     value={encryptedText}
                     readOnly
                     placeholder='加密结果将显示在这里'
-                    className='w-full px-3 py-2 pr-16 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none'
+                    className='w-full px-3 py-2 pr-16 border border-slate-300 dark:border-slate-600 rounded-lg shadow-sm bg-slate-50 dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none'
                     rows={4}
                   />
                   {encryptedText && (
@@ -339,7 +339,7 @@ const AesCrypto: React.FC = () => {
                   aesConfig.keySize / 8
                 } 字符)`}
               />
-              <p className='text-xs text-gray-500 dark:text-gray-400 mt-1'>
+              <p className='text-xs text-slate-500 dark:text-slate-400 mt-1'>
                 密钥长度必须为 {aesConfig.keySize / 8} 字符 ({aesConfig.keySize}{' '}
                 位)
               </p>
@@ -347,7 +347,7 @@ const AesCrypto: React.FC = () => {
             {aesConfig.mode !== 'ECB' && (
               <div>
                 <div className='mb-2'>
-                  <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+                  <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1'>
                     初始化向量 (IV)
                   </label>
                   <div className='flex'>
@@ -356,15 +356,15 @@ const AesCrypto: React.FC = () => {
                       value={encryptIv}
                       onChange={(e) => setEncryptIv(e.target.value)}
                       placeholder='请输入16字符的IV (128位)'
-                      className='flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white'
+                      className='flex-1 px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-l-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:text-white'
                     />
                     <button
                       onClick={() => generateRandomIv(true)}
-                      className='px-3 py-2 bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-r-md hover:bg-gray-300 dark:hover:bg-gray-500 focus:outline-none'>
+                      className='px-3 py-2 bg-slate-200 dark:bg-gray-600 text-slate-700 dark:text-slate-200 rounded-r-md hover:bg-slate-300 dark:hover:bg-slate-500 focus:outline-none'>
                       随机生成
                     </button>
                   </div>
-                  <p className='text-xs text-gray-500 dark:text-gray-400 mt-1'>
+                  <p className='text-xs text-slate-500 dark:text-slate-400 mt-1'>
                     IV长度必须为16字符 (128位)
                   </p>
                 </div>
@@ -373,7 +373,7 @@ const AesCrypto: React.FC = () => {
           </div>
 
           {encryptError && (
-            <div className='p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md'>
+            <div className='p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg'>
               <p className='text-red-700 dark:text-red-400 text-sm'>
                 {encryptError}
               </p>
@@ -397,21 +397,21 @@ const AesCrypto: React.FC = () => {
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
             <div>
               <div className='mb-2'>
-                <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+                <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1'>
                   要解密的文本
                 </label>
                 <textarea
                   value={decryptText}
                   onChange={(e) => setDecryptText(e.target.value)}
                   placeholder='请输入要解密的文本'
-                  className='w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white'
+                  className='w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg shadow-sm focus:outline-none focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:text-white'
                   rows={4}
                 />
               </div>
             </div>
             <div>
               <div className='mb-2'>
-                <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+                <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1'>
                   解密结果
                 </label>
                 <div className='relative'>
@@ -419,7 +419,7 @@ const AesCrypto: React.FC = () => {
                     value={decryptedText}
                     readOnly
                     placeholder='解密结果将显示在这里'
-                    className='w-full px-3 py-2 pr-16 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none'
+                    className='w-full px-3 py-2 pr-16 border border-slate-300 dark:border-slate-600 rounded-lg shadow-sm bg-slate-50 dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none'
                     rows={4}
                   />
                   {decryptedText && (
@@ -444,7 +444,7 @@ const AesCrypto: React.FC = () => {
                   aesConfig.keySize / 8
                 } 字符)`}
               />
-              <p className='text-xs text-gray-500 dark:text-gray-400 mt-1'>
+              <p className='text-xs text-slate-500 dark:text-slate-400 mt-1'>
                 密钥长度必须为 {aesConfig.keySize / 8} 字符 ({aesConfig.keySize}{' '}
                 位)
               </p>
@@ -452,7 +452,7 @@ const AesCrypto: React.FC = () => {
             {aesConfig.mode !== 'ECB' && (
               <div>
                 <div className='mb-2'>
-                  <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+                  <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1'>
                     初始化向量 (IV)
                   </label>
                   <div className='flex'>
@@ -461,15 +461,15 @@ const AesCrypto: React.FC = () => {
                       value={decryptIv}
                       onChange={(e) => setDecryptIv(e.target.value)}
                       placeholder='请输入16字符的IV (128位)'
-                      className='flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white'
+                      className='flex-1 px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-l-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:text-white'
                     />
                     <button
                       onClick={() => generateRandomIv(false)}
-                      className='px-3 py-2 bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-r-md hover:bg-gray-300 dark:hover:bg-gray-500 focus:outline-none'>
+                      className='px-3 py-2 bg-slate-200 dark:bg-gray-600 text-slate-700 dark:text-slate-200 rounded-r-md hover:bg-slate-300 dark:hover:bg-slate-500 focus:outline-none'>
                       随机生成
                     </button>
                   </div>
-                  <p className='text-xs text-gray-500 dark:text-gray-400 mt-1'>
+                  <p className='text-xs text-slate-500 dark:text-slate-400 mt-1'>
                     IV长度必须为16字符 (128位)
                   </p>
                 </div>
@@ -478,7 +478,7 @@ const AesCrypto: React.FC = () => {
           </div>
 
           {decryptError && (
-            <div className='p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md'>
+            <div className='p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg'>
               <p className='text-red-700 dark:text-red-400 text-sm'>
                 {decryptError}
               </p>

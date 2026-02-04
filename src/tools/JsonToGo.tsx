@@ -119,7 +119,7 @@ const JsonToGo: React.FC = () => {
         <div className='space-y-4 mb-4 flex-shrink-0'>
           <div className='flex flex-wrap items-center gap-4'>
             <div className='flex items-center'>
-              <label className='block text-base font-medium text-gray-700 dark:text-gray-300 mr-2 whitespace-nowrap'>
+              <label className='block text-base font-medium text-slate-700 dark:text-slate-300 mr-2 whitespace-nowrap'>
                 结构体名称:
               </label>
 
@@ -127,7 +127,7 @@ const JsonToGo: React.FC = () => {
                 type='text'
                 value={structName}
                 onChange={(e) => setStructName(e.target.value)}
-                className='w-64 px-2 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+                className='w-64 px-2 py-1 border border-slate-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
                 placeholder='结构体名称'
               />
             </div>
@@ -137,9 +137,9 @@ const JsonToGo: React.FC = () => {
                   type='checkbox'
                   checked={exportedFields}
                   onChange={(e) => setExportedFields(e.target.checked)}
-                  className='h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded'
+                  className='h-4 w-4 text-blue-600 focus:ring-primary-500 border-slate-300 rounded'
                 />
-                <span className='text-base font-medium text-gray-700 dark:text-gray-300 ml-2 whitespace-nowrap'>
+                <span className='text-base font-medium text-slate-700 dark:text-slate-300 ml-2 whitespace-nowrap'>
                   导出字段
                 </span>
               </label>
@@ -150,9 +150,9 @@ const JsonToGo: React.FC = () => {
                   type='checkbox'
                   checked={isGo118OrAbove}
                   onChange={(e) => setIsGo118OrAbove(e.target.checked)}
-                  className='h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded'
+                  className='h-4 w-4 text-blue-600 focus:ring-primary-500 border-slate-300 rounded'
                 />
-                <span className='text-base font-medium text-gray-700 dark:text-gray-300 ml-2 whitespace-nowrap'>
+                <span className='text-base font-medium text-slate-700 dark:text-slate-300 ml-2 whitespace-nowrap'>
                   Go 1.18+ (any)
                 </span>
               </label>
@@ -163,9 +163,9 @@ const JsonToGo: React.FC = () => {
                   type='checkbox'
                   checked={isGo124OrAbove}
                   onChange={(e) => setIsGo124OrAbove(e.target.checked)}
-                  className='h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded'
+                  className='h-4 w-4 text-blue-600 focus:ring-primary-500 border-slate-300 rounded'
                 />
-                <span className='text-base font-medium text-gray-700 dark:text-gray-300 ml-2 whitespace-nowrap'>
+                <span className='text-base font-medium text-slate-700 dark:text-slate-300 ml-2 whitespace-nowrap'>
                   Go 1.24+ (omitzero)
                 </span>
               </label>
@@ -173,7 +173,7 @@ const JsonToGo: React.FC = () => {
           </div>
 
           <div className='flex items-center'>
-            <label className='block text-base font-medium text-gray-700 dark:text-gray-300 mr-3'>
+            <label className='block text-base font-medium text-slate-700 dark:text-slate-300 mr-3'>
               标签选择:
             </label>
             <div className='flex flex-wrap gap-3 flex-1'>
@@ -190,9 +190,9 @@ const JsonToGo: React.FC = () => {
                         [tag]: e.target.checked,
                       }))
                     }
-                    className='h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded'
+                    className='h-4 w-4 text-blue-600 focus:ring-primary-500 border-slate-300 rounded'
                   />
-                  <span className='text-base font-medium text-gray-700 dark:text-gray-300 ml-1 px-2 py-1'>
+                  <span className='text-base font-medium text-slate-700 dark:text-slate-300 ml-1 px-2 py-1'>
                     {tag}
                   </span>
                 </label>
@@ -215,8 +215,8 @@ const JsonToGo: React.FC = () => {
             cursor='col-resize'
             className='flex flex-row gap-4 h-full'>
             <div className='flex flex-col w-full h-full'>
-              <div className='p-2 bg-gray-100 dark:bg-gray-700 border-b dark:border-gray-600 flex items-center justify-between flex-shrink-0'>
-                <h2 className='font-semibold text-gray-800 dark:text-gray-200'>
+              <div className='p-2 bg-slate-100 dark:bg-slate-700 border-b dark:border-slate-600 flex items-center justify-between flex-shrink-0'>
+                <h2 className='font-semibold text-slate-800 dark:text-slate-200'>
                   JSON 输入
                 </h2>
                 <div className='flex items-center space-x-2'>
@@ -248,8 +248,8 @@ const JsonToGo: React.FC = () => {
               </div>
             </div>
             <div className='flex flex-col w-full h-full'>
-              <div className='p-2 bg-gray-100 dark:bg-gray-700 border-b dark:border-gray-600 flex-shrink-0'>
-                <h2 className='font-semibold text-gray-800 dark:text-gray-200'>
+              <div className='p-2 bg-slate-100 dark:bg-slate-700 border-b dark:border-slate-600 flex-shrink-0'>
+                <h2 className='font-semibold text-slate-800 dark:text-slate-200'>
                   Go 结构体输出
                 </h2>
               </div>

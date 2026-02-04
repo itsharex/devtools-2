@@ -147,8 +147,8 @@ CREATE TABLE posts (
 
   return (
     <div className='flex flex-col h-full'>
-      <div className='p-4 border-b dark:border-gray-600 bg-white dark:bg-gray-800'>
-        <h1 className='text-xl font-bold mb-4 text-gray-800 dark:text-gray-200'>
+      <div className='p-4 border-b dark:border-slate-600 bg-white dark:bg-slate-800'>
+        <h1 className='text-xl font-bold mb-4 text-slate-800 dark:text-slate-200'>
           SQL 转 Go 结构体
         </h1>
 
@@ -160,7 +160,7 @@ CREATE TABLE posts (
               onChange={(e) => setEnablePluralization(e.target.checked)}
               className='w-4 h-4'
             />
-            <span className='text-gray-700 dark:text-gray-300'>复数表名</span>
+            <span className='text-slate-700 dark:text-slate-300'>复数表名</span>
           </label>
 
           <label className='flex items-center space-x-2'>
@@ -170,7 +170,7 @@ CREATE TABLE posts (
               onChange={(e) => setExportedFields(e.target.checked)}
               className='w-4 h-4'
             />
-            <span className='text-gray-700 dark:text-gray-300'>导出字段</span>
+            <span className='text-slate-700 dark:text-slate-300'>导出字段</span>
           </label>
 
           <label className='flex items-center space-x-2'>
@@ -180,15 +180,15 @@ CREATE TABLE posts (
               onChange={(e) => setIsGo124OrAbove(e.target.checked)}
               className='w-4 h-4'
             />
-            <span className='text-gray-700 dark:text-gray-300'>Go 1.24+</span>
+            <span className='text-slate-700 dark:text-slate-300'>Go 1.24+</span>
           </label>
 
           <div className='flex items-center space-x-2'>
-            <span className='text-gray-700 dark:text-gray-300'>JSON 处理:</span>
+            <span className='text-slate-700 dark:text-slate-300'>JSON 处理:</span>
             <select
               value={jsonNullHandling}
               onChange={(e) => setJsonNullHandling(e.target.value as any)}
-              className='px-2 py-1 border dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'>
+              className='px-2 py-1 border dark:border-slate-600 rounded bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-200'>
               <option value='none'>无</option>
               <option value='omitempty'>omitempty</option>
               {isGo124OrAbove && <option value='omitzero'>omitzero</option>}
@@ -197,7 +197,7 @@ CREATE TABLE posts (
         </div>
 
         <div className='flex flex-wrap gap-4 mb-4'>
-          <span className='font-medium text-gray-700 dark:text-gray-300'>
+          <span className='font-medium text-slate-700 dark:text-slate-300'>
             标签:
           </span>
           {Object.entries(selectedTags).map(([tag, checked]) => (
@@ -208,7 +208,7 @@ CREATE TABLE posts (
                 onChange={(e) => handleTagChange(tag, e.target.checked)}
                 className='w-4 h-4'
               />
-              <span className='uppercase text-gray-700 dark:text-gray-300'>
+              <span className='uppercase text-slate-700 dark:text-slate-300'>
                 {tag}
               </span>
             </label>
@@ -228,19 +228,19 @@ CREATE TABLE posts (
         cursor='col-resize'
         className='flex flex-row gap-4 h-full flex-1 overflow-hidden'>
         <div className='flex flex-col w-full h-full'>
-          <div className='p-2 bg-gray-100 dark:bg-gray-700 border-b dark:border-gray-600 flex items-center justify-between flex-shrink-0'>
-            <h2 className='font-semibold text-gray-800 dark:text-gray-200'>
+          <div className='p-2 bg-slate-100 dark:bg-slate-700 border-b dark:border-slate-600 flex items-center justify-between flex-shrink-0'>
+            <h2 className='font-semibold text-slate-800 dark:text-slate-200'>
               SQL 输入
             </h2>
             <div className='flex items-center space-x-2'>
               <button
                 onClick={handleLoadExample}
-                className='px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500'>
+                className='px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary-500'>
                 示例
               </button>
               <button
                 onClick={handleClearInput}
-                className='px-3 py-1 text-sm bg-gray-500 text-white rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500'>
+                className='px-3 py-1 text-sm bg-slate-500 text-white rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500'>
                 清空
               </button>
             </div>
@@ -269,8 +269,8 @@ CREATE TABLE posts (
         </div>
 
         <div className='flex flex-col w-full h-full'>
-          <div className='p-2 bg-gray-100 dark:bg-gray-700 border-b dark:border-gray-600 flex items-center justify-between flex-shrink-0'>
-            <h2 className='font-semibold text-gray-800 dark:text-gray-200'>
+          <div className='p-2 bg-slate-100 dark:bg-slate-700 border-b dark:border-slate-600 flex items-center justify-between flex-shrink-0'>
+            <h2 className='font-semibold text-slate-800 dark:text-slate-200'>
               Go 结构体输出
             </h2>
           </div>

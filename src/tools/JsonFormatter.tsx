@@ -119,12 +119,12 @@ const JsonFormatter: React.FC = () => {
             className='flex flex-row gap-4 h-full'>
             {/* 左侧输入区域 */}
             <div className='flex flex-col h-full'>
-              <div className='p-2 bg-gray-100 dark:bg-gray-700 border-b dark:border-gray-600 flex items-center justify-between flex-shrink-0'>
-                <h2 className='font-semibold text-gray-800 dark:text-gray-200'>
+              <div className='p-2 bg-slate-100 dark:bg-slate-700 border-b dark:border-slate-600 flex items-center justify-between flex-shrink-0'>
+                <h2 className='font-semibold text-slate-800 dark:text-slate-200'>
                   JSON 输入
                 </h2>
                 <div className='flex items-center space-x-2'>
-                  <div className='text-sm text-gray-600 dark:text-gray-400'>
+                  <div className='text-sm text-slate-600 dark:text-slate-400'>
                     输入长度: {input.length}
                   </div>
                   <Button
@@ -164,12 +164,12 @@ const JsonFormatter: React.FC = () => {
 
             {/* 右侧输出区域 */}
             <div className='flex flex-col h-full'>
-              <div className='p-2 bg-gray-100 dark:bg-gray-700 border-b dark:border-gray-600 flex items-center justify-between flex-shrink-0'>
-                <h2 className='font-semibold text-gray-800 dark:text-gray-200'>
+              <div className='p-2 bg-slate-100 dark:bg-slate-700 border-b dark:border-slate-600 flex items-center justify-between flex-shrink-0'>
+                <h2 className='font-semibold text-slate-800 dark:text-slate-200'>
                   格式化输出
                 </h2>
                 <div className='flex items-center space-x-2'>
-                  <div className='text-sm text-gray-600 dark:text-gray-400'>
+                  <div className='text-sm text-slate-600 dark:text-slate-400'>
                     输出长度: {output.length}
                   </div>
                   <Button

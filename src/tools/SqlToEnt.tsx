@@ -139,7 +139,7 @@ CREATE TABLE posts (
       padding={false}>
       <div className='flex flex-col h-full'>
         {/* Configuration Panel - Fixed height */}
-        <div className='flex-shrink-0 p-4 border-b dark:border-gray-600 bg-white dark:bg-gray-800'>
+        <div className='flex-shrink-0 p-4 border-b dark:border-slate-600 bg-white dark:bg-slate-800'>
           {/* Configuration Options */}
           <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 mb-4'>
             <label className='flex items-center space-x-2'>
@@ -149,7 +149,7 @@ CREATE TABLE posts (
                 onChange={(e) => setEnablePluralization(e.target.checked)}
                 className='w-4 h-4'
               />
-              <span className='text-gray-700 dark:text-gray-300'>复数表名</span>
+              <span className='text-slate-700 dark:text-slate-300'>复数表名</span>
             </label>
 
             <label className='flex items-center space-x-2'>
@@ -159,7 +159,7 @@ CREATE TABLE posts (
                 onChange={(e) => setGenerateEdges(e.target.checked)}
                 className='w-4 h-4'
               />
-              <span className='text-gray-700 dark:text-gray-300'>
+              <span className='text-slate-700 dark:text-slate-300'>
                 生成边缘关系
               </span>
             </label>
@@ -171,7 +171,7 @@ CREATE TABLE posts (
                 onChange={(e) => setGenerateMixin(e.target.checked)}
                 className='w-4 h-4'
               />
-              <span className='text-gray-700 dark:text-gray-300'>
+              <span className='text-slate-700 dark:text-slate-300'>
                 生成 Mixin
               </span>
             </label>
@@ -183,7 +183,7 @@ CREATE TABLE posts (
                 onChange={(e) => setGenerateHooks(e.target.checked)}
                 className='w-4 h-4'
               />
-              <span className='text-gray-700 dark:text-gray-300'>
+              <span className='text-slate-700 dark:text-slate-300'>
                 生成 Hooks
               </span>
             </label>
@@ -195,7 +195,7 @@ CREATE TABLE posts (
                 onChange={(e) => setGeneratePolicy(e.target.checked)}
                 className='w-4 h-4'
               />
-              <span className='text-gray-700 dark:text-gray-300'>
+              <span className='text-slate-700 dark:text-slate-300'>
                 生成 Policy
               </span>
             </label>
@@ -207,7 +207,7 @@ CREATE TABLE posts (
                 onChange={(e) => setUseUUIDPrimaryKey(e.target.checked)}
                 className='w-4 h-4'
               />
-              <span className='text-gray-700 dark:text-gray-300'>
+              <span className='text-slate-700 dark:text-slate-300'>
                 UUID 主键
               </span>
             </label>
@@ -219,18 +219,18 @@ CREATE TABLE posts (
                 onChange={(e) => setEnableSoftDelete(e.target.checked)}
                 className='w-4 h-4'
               />
-              <span className='text-gray-700 dark:text-gray-300'>软删除</span>
+              <span className='text-slate-700 dark:text-slate-300'>软删除</span>
             </label>
           </div>
 
           {/* Package Name Input */}
           <div className='flex items-center space-x-4 mb-4'>
-            <label className='text-gray-700 dark:text-gray-300'>包名:</label>
+            <label className='text-slate-700 dark:text-slate-300'>包名:</label>
             <input
               type='text'
               value={packageName}
               onChange={(e) => setPackageName(e.target.value)}
-              className='px-3 py-1 border dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'
+              className='px-3 py-1 border dark:border-slate-600 rounded bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-200'
               placeholder='schema'
             />
           </div>
@@ -258,19 +258,19 @@ CREATE TABLE posts (
             className='flex flex-row gap-2 h-full'>
             {/* SQL Input Panel */}
             <div className='flex flex-col h-full'>
-              <div className='p-2 bg-gray-100 dark:bg-gray-700 border-b dark:border-gray-600 flex items-center justify-between flex-shrink-0'>
-                <h2 className='font-semibold text-gray-800 dark:text-gray-200'>
+              <div className='p-2 bg-slate-100 dark:bg-slate-700 border-b dark:border-slate-600 flex items-center justify-between flex-shrink-0'>
+                <h2 className='font-semibold text-slate-800 dark:text-slate-200'>
                   SQL 输入
                 </h2>
                 <div className='flex items-center space-x-2'>
                   <button
                     onClick={loadExample}
-                    className='px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500'>
+                    className='px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary-500'>
                     示例
                   </button>
                   <button
                     onClick={clearAll}
-                    className='px-3 py-1 text-sm bg-gray-500 text-white rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500'>
+                    className='px-3 py-1 text-sm bg-slate-500 text-white rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500'>
                     清空
                   </button>
                 </div>
@@ -290,15 +290,15 @@ CREATE TABLE posts (
 
             {/* Go Ent Output Panel with Tabs */}
             <div className='flex flex-col h-full'>
-              <div className='p-2 bg-gray-100 dark:bg-gray-700 border-b dark:border-gray-600 flex-shrink-0'>
-                <h2 className='font-semibold text-gray-800 dark:text-gray-200'>
+              <div className='p-2 bg-slate-100 dark:bg-slate-700 border-b dark:border-slate-600 flex-shrink-0'>
+                <h2 className='font-semibold text-slate-800 dark:text-slate-200'>
                   Go Ent Schema 输出
                 </h2>
               </div>
 
               {/* Tabs for multiple tables */}
               {tableNames.length > 0 && (
-                <div className='border-b border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 flex-shrink-0'>
+                <div className='border-b border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 flex-shrink-0'>
                   <div className='flex overflow-x-auto'>
                     {tableNames.map((tableName, index) => (
                       <button
@@ -307,7 +307,7 @@ CREATE TABLE posts (
                         className={`px-4 py-2 text-sm font-medium whitespace-nowrap border-b-2 ${
                           activeTab === index
                             ? 'border-blue-500 text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300'
+                            : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300 dark:text-slate-400 dark:hover:text-slate-300'
                         }`}>
                         {tableName}.go
                       </button>

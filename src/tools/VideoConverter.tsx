@@ -614,8 +614,8 @@ const VideoConverter: React.FC = () => {
         )}
 
         {/* 配置区域 */}
-        <div className='mb-6 p-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800'>
-          <h3 className='text-lg font-medium text-gray-900 dark:text-white mb-4'>
+        <div className='mb-6 p-4 border border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800'>
+          <h3 className='text-lg font-medium text-slate-900 dark:text-white mb-4'>
             转换设置
           </h3>
 
@@ -623,13 +623,13 @@ const VideoConverter: React.FC = () => {
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-4'>
             {/* 源格式选择 */}
             <div>
-              <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2'>
+              <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2'>
                 源格式
               </label>
               <select
                 value={sourceFormat}
                 onChange={(e) => setSourceFormat(e.target.value)}
-                className='w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+                className='w-full px-3 py-2 border border-slate-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
                 disabled={isConverting || ffmpegInstalled === false}>
                 <option value='auto'>自动检测</option>
                 {supportedFormats.map((format) => (
@@ -638,20 +638,20 @@ const VideoConverter: React.FC = () => {
                   </option>
                 ))}
               </select>
-              <p className='mt-1 text-xs text-gray-500 dark:text-gray-400'>
+              <p className='mt-1 text-xs text-slate-500 dark:text-slate-400'>
                 选择源视频文件格式，自动检测可支持所有格式
               </p>
             </div>
 
             {/* 目标格式选择 */}
             <div>
-              <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2'>
+              <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2'>
                 目标格式
               </label>
               <select
                 value={targetFormat}
                 onChange={(e) => setTargetFormat(e.target.value)}
-                className='w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+                className='w-full px-3 py-2 border border-slate-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
                 disabled={isConverting || ffmpegInstalled === false}>
                 {supportedFormats.map((format) => (
                   <option key={`target-${format.value}`} value={format.value}>
@@ -659,7 +659,7 @@ const VideoConverter: React.FC = () => {
                   </option>
                 ))}
               </select>
-              <p className='mt-1 text-xs text-gray-500 dark:text-gray-400'>
+              <p className='mt-1 text-xs text-slate-500 dark:text-slate-400'>
                 转换后的视频格式，MP4为通用格式
               </p>
             </div>
@@ -673,10 +673,10 @@ const VideoConverter: React.FC = () => {
                   type='checkbox'
                   checked={useCustomOutputDir}
                   onChange={(e) => setUseCustomOutputDir(e.target.checked)}
-                  className='w-4 h-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded'
+                  className='w-4 h-4 text-blue-600 focus:ring-primary-500 border-slate-300 rounded'
                   disabled={isConverting || ffmpegInstalled === false}
                 />
-                <span className='ml-2 text-sm font-medium text-gray-700 dark:text-gray-300'>
+                <span className='ml-2 text-sm font-medium text-slate-700 dark:text-slate-300'>
                   指定输出目录
                 </span>
               </label>
@@ -690,7 +690,7 @@ const VideoConverter: React.FC = () => {
                     value={customOutputDir}
                     onChange={(e) => setCustomOutputDir(e.target.value)}
                     placeholder='选择输出目录...'
-                    className='w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+                    className='w-full px-3 py-2 border border-slate-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
                     readOnly
                   />
                 </div>
@@ -714,21 +714,21 @@ const VideoConverter: React.FC = () => {
             )}
 
             {useCustomOutputDir && customOutputDir && (
-              <div className='text-xs text-gray-500 dark:text-gray-400'>
+              <div className='text-xs text-slate-500 dark:text-slate-400'>
                 转换后的文件将保存到: {customOutputDir}
               </div>
             )}
           </div>
 
           {/* 删除源文件选项 */}
-          <div className='mt-4 pt-4 border-t border-gray-200 dark:border-gray-600'>
+          <div className='mt-4 pt-4 border-t border-slate-200 dark:border-slate-600'>
             <div className='flex items-center space-x-3'>
               <label className='flex items-center cursor-pointer'>
                 <input
                   type='checkbox'
                   checked={deleteSourceFile}
                   onChange={(e) => setDeleteSourceFile(e.target.checked)}
-                  className='w-4 h-4 text-red-600 focus:ring-red-500 border-gray-300 rounded'
+                  className='w-4 h-4 text-red-600 focus:ring-red-500 border-slate-300 rounded'
                   disabled={isConverting || ffmpegInstalled === false}
                 />
                 <span className='ml-2 text-sm font-medium text-red-700 dark:text-red-400'>
@@ -745,7 +745,7 @@ const VideoConverter: React.FC = () => {
         {/* 文件列表区域 */}
         <div className='mb-8 flex-1 min-h-[300px]'>
           <div className='flex justify-between items-center mb-3'>
-            <h3 className='text-lg font-medium text-gray-900 dark:text-white'>
+            <h3 className='text-lg font-medium text-slate-900 dark:text-white'>
               待转换文件列表 ({videoFiles.length}个文件)
             </h3>
             <div className='flex space-x-2'>
@@ -767,30 +767,30 @@ const VideoConverter: React.FC = () => {
           </div>
 
           {videoFiles.length > 0 ? (
-            <div className='border border-gray-200 dark:border-gray-700 rounded-lg p-4 bg-gray-50 dark:bg-gray-800 h-full overflow-hidden flex flex-col'>
+            <div className='border border-slate-200 dark:border-slate-700 rounded-lg p-4 bg-slate-50 dark:bg-slate-800 h-full overflow-hidden flex flex-col'>
               <div className='overflow-y-auto flex-1 min-h-0'>
                 <table className='min-w-full divide-y divide-gray-200 dark:divide-gray-700'>
-                  <thead className='bg-gray-100 dark:bg-gray-700 sticky top-0'>
+                  <thead className='bg-slate-100 dark:bg-slate-700 sticky top-0'>
                     <tr>
-                      <th className='px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider'>
+                      <th className='px-4 py-2 text-left text-xs font-medium text-slate-500 dark:text-slate-300 uppercase tracking-wider'>
                         路径信息
                       </th>
-                      <th className='px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider'>
+                      <th className='px-4 py-2 text-left text-xs font-medium text-slate-500 dark:text-slate-300 uppercase tracking-wider'>
                         大小
                       </th>
-                      <th className='px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider'>
+                      <th className='px-4 py-2 text-left text-xs font-medium text-slate-500 dark:text-slate-300 uppercase tracking-wider'>
                         时长
                       </th>
-                      <th className='px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider'>
+                      <th className='px-4 py-2 text-left text-xs font-medium text-slate-500 dark:text-slate-300 uppercase tracking-wider'>
                         分辨率
                       </th>
-                      <th className='px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider'>
+                      <th className='px-4 py-2 text-left text-xs font-medium text-slate-500 dark:text-slate-300 uppercase tracking-wider'>
                         状态
                       </th>
-                      <th className='px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider'>
+                      <th className='px-4 py-2 text-left text-xs font-medium text-slate-500 dark:text-slate-300 uppercase tracking-wider'>
                         错误信息
                       </th>
-                      <th className='px-4 py-2 text-center text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider'>
+                      <th className='px-4 py-2 text-center text-xs font-medium text-slate-500 dark:text-slate-300 uppercase tracking-wider'>
                         操作
                       </th>
                     </tr>
@@ -808,12 +808,12 @@ const VideoConverter: React.FC = () => {
                           <div className='space-y-1'>
                             {/* 源文件路径 */}
                             <div className='flex items-start space-x-1'>
-                              <span className='text-xs text-gray-500 dark:text-gray-400 font-medium min-w-[45px]'>
+                              <span className='text-xs text-slate-500 dark:text-slate-400 font-medium min-w-[45px]'>
                                 源文件:
                               </span>
                               <div className='flex items-center space-x-1 flex-1 min-w-0'>
                                 <span
-                                  className='text-xs text-gray-700 dark:text-gray-300 truncate inline-block cursor-pointer hover:text-blue-600 dark:hover:text-blue-400'
+                                  className='text-xs text-slate-700 dark:text-slate-300 truncate inline-block cursor-pointer hover:text-blue-600 dark:hover:text-blue-400'
                                   title={file.path}
                                   onClick={() =>
                                     file.path && copyToClipboard(file.path)
@@ -824,7 +824,7 @@ const VideoConverter: React.FC = () => {
                                   onClick={() =>
                                     file.path && copyToClipboard(file.path)
                                   }
-                                  className='text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 flex-shrink-0'
+                                  className='text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300 flex-shrink-0'
                                   title='复制源文件路径'>
                                   <svg
                                     className='w-3 h-3'
@@ -844,7 +844,7 @@ const VideoConverter: React.FC = () => {
 
                             {/* 转换后路径 */}
                             <div className='flex items-start space-x-1'>
-                              <span className='text-xs text-gray-500 dark:text-gray-400 font-medium min-w-[45px]'>
+                              <span className='text-xs text-slate-500 dark:text-slate-400 font-medium min-w-[45px]'>
                                 转换后:
                               </span>
                               <div className='flex items-center space-x-1 flex-1 min-w-0'>
@@ -882,7 +882,7 @@ const VideoConverter: React.FC = () => {
                                     </button>
                                   </>
                                 ) : (
-                                  <span className='text-xs text-gray-400 dark:text-gray-500'>
+                                  <span className='text-xs text-slate-400 dark:text-slate-500'>
                                     未转换
                                   </span>
                                 )}
@@ -890,13 +890,13 @@ const VideoConverter: React.FC = () => {
                             </div>
                           </div>
                         </td>
-                        <td className='px-4 py-2 text-sm text-gray-900 dark:text-gray-100'>
+                        <td className='px-4 py-2 text-sm text-slate-900 dark:text-slate-100'>
                           {formatFileSize(file.size)}
                         </td>
-                        <td className='px-4 py-2 text-sm text-gray-900 dark:text-gray-100'>
+                        <td className='px-4 py-2 text-sm text-slate-900 dark:text-slate-100'>
                           {file.duration || '未知'}
                         </td>
-                        <td className='px-4 py-2 text-sm text-gray-900 dark:text-gray-100'>
+                        <td className='px-4 py-2 text-sm text-slate-900 dark:text-slate-100'>
                           {file.resolution || '未知'}
                         </td>
                         <td className='px-4 py-2 text-sm'>
@@ -943,7 +943,7 @@ const VideoConverter: React.FC = () => {
                               })()}
                             </span>
                           ) : (
-                            <span className='text-gray-400 dark:text-gray-500 text-xs'>
+                            <span className='text-slate-400 dark:text-slate-500 text-xs'>
                               -
                             </span>
                           )}
@@ -955,10 +955,10 @@ const VideoConverter: React.FC = () => {
                               (isConverting && file.status === 'converting') ||
                               ffmpegInstalled === false
                             }
-                            className={`p-1 rounded-md transition-colors ${
+                            className={`p-1 rounded-lg transition-colors ${
                               (isConverting && file.status === 'converting') ||
                               ffmpegInstalled === false
-                                ? 'text-gray-400 cursor-not-allowed'
+                                ? 'text-slate-400 cursor-not-allowed'
                                 : 'text-red-600 hover:text-red-700 hover:bg-red-50 dark:hover:bg-red-900/20'
                             }`}
                             title='删除文件'>
@@ -983,8 +983,8 @@ const VideoConverter: React.FC = () => {
               </div>
             </div>
           ) : (
-            <div className='border border-gray-200 dark:border-gray-700 rounded-lg p-8 bg-gray-50 dark:bg-gray-800 text-center'>
-              <p className='text-gray-500 dark:text-gray-400'>
+            <div className='border border-slate-200 dark:border-slate-700 rounded-lg p-8 bg-slate-50 dark:bg-slate-800 text-center'>
+              <p className='text-slate-500 dark:text-slate-400'>
                 暂无待转换文件，请点击右上角按钮添加文件或目录
               </p>
             </div>
@@ -994,19 +994,19 @@ const VideoConverter: React.FC = () => {
         {/* 转换控制区域 */}
         {videoFiles.length > 0 && (
           <div className='mb-6 mt-4'>
-            <h3 className='text-lg font-medium text-gray-900 dark:text-white mb-3'>
+            <h3 className='text-lg font-medium text-slate-900 dark:text-white mb-3'>
               转换控制
             </h3>
-            <div className='border border-gray-200 dark:border-gray-700 rounded-lg p-4 bg-gray-50 dark:bg-gray-800'>
+            <div className='border border-slate-200 dark:border-slate-700 rounded-lg p-4 bg-slate-50 dark:bg-slate-800'>
               {/* 整体进度条 */}
               {isConverting && currentConvertingIndex >= 0 && (
                 <div className='mb-4'>
                   <div className='flex justify-between items-center mb-2'>
-                    <p className='text-sm text-gray-600 dark:text-gray-400'>
+                    <p className='text-sm text-slate-600 dark:text-slate-400'>
                       总体进度: {currentConvertingIndex + 1} /{' '}
                       {videoFiles.length} 个文件
                     </p>
-                    <p className='text-sm text-gray-600 dark:text-gray-400'>
+                    <p className='text-sm text-slate-600 dark:text-slate-400'>
                       {Math.round(
                         ((currentConvertingIndex +
                           (videoFiles[currentConvertingIndex]?.progress || 0) /
@@ -1017,9 +1017,9 @@ const VideoConverter: React.FC = () => {
                       %
                     </p>
                   </div>
-                  <div className='w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2'>
+                  <div className='w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2'>
                     <div
-                      className='bg-blue-600 h-2 rounded-full transition-all duration-300'
+                      className='bg-blue-600 h-2 rounded-full transition-all duration-200'
                       style={{
                         width: `${
                           ((currentConvertingIndex +

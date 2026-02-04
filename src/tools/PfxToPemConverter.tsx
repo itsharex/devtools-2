@@ -177,7 +177,7 @@ const PfxToPemConverter: React.FC = () => {
       <div className='flex flex-col h-full space-y-4 overflow-y-auto'>
         {/* OpenSSL命令提示 */}
         {showOpensslInfo && (
-          <div className='mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-md'>
+          <div className='mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg'>
             <div className='flex items-center justify-between mb-3'>
               <h3 className='text-sm font-medium text-blue-800 dark:text-blue-200'>
                 📋 OpenSSL命令参考
@@ -204,7 +204,7 @@ const PfxToPemConverter: React.FC = () => {
                 <p className='font-medium text-blue-800 dark:text-blue-200 mb-1'>
                   基本转换（无密码）：
                 </p>
-                <code className='block p-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono text-blue-700 dark:text-blue-300'>
+                <code className='block p-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded font-mono text-blue-700 dark:text-blue-300'>
                   openssl pkcs12 -in certificate.pfx -out certificate.pem -nodes
                 </code>
               </div>
@@ -212,7 +212,7 @@ const PfxToPemConverter: React.FC = () => {
                 <p className='font-medium text-blue-800 dark:text-blue-200 mb-1'>
                   带密码转换：
                 </p>
-                <code className='block p-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono text-blue-700 dark:text-blue-300'>
+                <code className='block p-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded font-mono text-blue-700 dark:text-blue-300'>
                   openssl pkcs12 -in certificate.pfx -out certificate.pem -nodes
                   -password pass:yourpassword
                 </code>
@@ -221,7 +221,7 @@ const PfxToPemConverter: React.FC = () => {
                 <p className='font-medium text-blue-800 dark:text-blue-200 mb-1'>
                   仅导出证书（不含私钥）：
                 </p>
-                <code className='block p-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono text-blue-700 dark:text-blue-300'>
+                <code className='block p-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded font-mono text-blue-700 dark:text-blue-300'>
                   openssl pkcs12 -in certificate.pfx -out certificate.pem
                   -nokeys
                 </code>
@@ -230,7 +230,7 @@ const PfxToPemConverter: React.FC = () => {
                 <p className='font-medium text-blue-800 dark:text-blue-200 mb-1'>
                   仅导出私钥：
                 </p>
-                <code className='block p-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono text-blue-700 dark:text-blue-300'>
+                <code className='block p-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded font-mono text-blue-700 dark:text-blue-300'>
                   openssl pkcs12 -in certificate.pfx -out privatekey.pem
                   -nocerts -nodes
                 </code>
@@ -244,7 +244,7 @@ const PfxToPemConverter: React.FC = () => {
         )}
 
         {/* 使用说明 */}
-        <div className='mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-md'>
+        <div className='mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg'>
           <h3 className='text-sm font-medium text-blue-800 dark:text-blue-200 mb-2'>
             💡 使用提示
           </h3>
@@ -268,7 +268,7 @@ const PfxToPemConverter: React.FC = () => {
           />
           {fileName && (
             <div className='mt-2 flex items-center justify-between'>
-              <div className='text-sm text-gray-600 dark:text-gray-400'>
+              <div className='text-sm text-slate-600 dark:text-slate-400'>
                 已选择: {fileName}
               </div>
               <button
@@ -282,20 +282,20 @@ const PfxToPemConverter: React.FC = () => {
 
         {/* 密码输入 */}
         <div className='mb-4 flex flex-col sm:flex-row sm:items-center sm:space-x-3 space-y-2 sm:space-y-0'>
-          <label className='sm:w-36 w-full text-sm font-medium text-gray-700 dark:text-gray-300 mb-0'>
+          <label className='sm:w-36 w-full text-sm font-medium text-slate-700 dark:text-slate-300 mb-0'>
             PFX 密码 (可选):
           </label>
           <div className='w-full sm:flex-1 flex'>
             <input
               type={showPassword ? 'text' : 'password'}
-              className='w-full p-2 border border-gray-300 rounded-l-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+              className='w-full p-2 border border-slate-300 rounded-l-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder='输入PFX文件密码（如果有的话）'
             />
             <button
               type='button'
-              className='px-3 py-2 bg-gray-200 text-gray-700 border border-l-0 border-gray-300 rounded-r-md hover:bg-gray-300 hover:text-gray-700 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-500 dark:hover:text-gray-100 flex items-center justify-center'
+              className='px-3 py-2 bg-slate-200 text-slate-700 border border-l-0 border-slate-300 rounded-r-md hover:bg-slate-300 hover:text-slate-700 dark:bg-gray-600 dark:text-slate-200 dark:border-slate-600 dark:hover:bg-slate-500 dark:hover:text-slate-100 flex items-center justify-center'
               onClick={() => setShowPassword(!showPassword)}>
               {showPassword ? (
                 <svg
@@ -350,7 +350,7 @@ const PfxToPemConverter: React.FC = () => {
         {result && (
           <div className='mb-4'>
             <div className='flex justify-between items-center mb-2'>
-              <label className='block text-sm font-medium text-gray-700 dark:text-gray-300'>
+              <label className='block text-sm font-medium text-slate-700 dark:text-slate-300'>
                 转换结果:
               </label>
               <div className='space-x-2'>
@@ -365,7 +365,7 @@ const PfxToPemConverter: React.FC = () => {
             <textarea
               value={result}
               readOnly
-              className='w-full h-64 p-3 border border-gray-300 rounded-md font-mono text-sm bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+              className='w-full h-64 p-3 border border-slate-300 rounded-lg font-mono text-sm bg-slate-50 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
               placeholder='转换结果将显示在这里...'
             />
           </div>
@@ -374,7 +374,7 @@ const PfxToPemConverter: React.FC = () => {
         {/* 错误信息 */}
         {error && error !== '已复制到剪贴板' && (
           <div className='mb-4'>
-            <div className='p-3 bg-red-100 text-red-700 rounded-md text-sm'>
+            <div className='p-3 bg-red-100 text-red-700 rounded-lg text-sm'>
               {error}
             </div>
           </div>

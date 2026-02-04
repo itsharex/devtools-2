@@ -32,7 +32,7 @@ const UrlEncoderDecoder: React.FC = () => {
       description='URL 编码和解码工具，支持 URI 组件编码'>
       <div className='space-y-4'>
         <div className='flex items-center space-x-4'>
-          <label className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+          <label className='text-sm font-medium text-slate-700 dark:text-slate-300'>
             操作模式:
           </label>
           <div className='flex space-x-2'>
@@ -41,7 +41,7 @@ const UrlEncoderDecoder: React.FC = () => {
               className={`px-3 py-1 rounded ${
                 mode === 'encode'
                   ? 'bg-blue-600 text-white'
-                  : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
+                  : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
               }`}>
               编码
             </button>
@@ -50,20 +50,20 @@ const UrlEncoderDecoder: React.FC = () => {
               className={`px-3 py-1 rounded ${
                 mode === 'decode'
                   ? 'bg-blue-600 text-white'
-                  : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
+                  : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
               }`}>
               解码
             </button>
           </div>
           <button
             onClick={handleSwap}
-            className='px-3 py-1 rounded bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300'>
+            className='px-3 py-1 rounded bg-slate-300 dark:bg-gray-600 text-slate-700 dark:text-slate-300'>
             交换输入/输出
           </button>
         </div>
 
         <div>
-          <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+          <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1'>
             输入:
           </label>
           <textarea
@@ -72,30 +72,30 @@ const UrlEncoderDecoder: React.FC = () => {
             placeholder={
               mode === 'encode' ? '输入要编码的文本' : '输入要解码的 URL'
             }
-            className='w-full h-32 p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100'
+            className='w-full h-32 p-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100'
           />
         </div>
 
         <div className='flex justify-center'>
           <button
             onClick={handleProcess}
-            className='px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors'>
+            className='px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors'>
             {mode === 'encode' ? '编码' : '解码'}
           </button>
         </div>
 
         <div>
-          <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+          <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1'>
             输出:
           </label>
           <textarea
             value={output}
             readOnly
-            className='w-full h-32 p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'
+            className='w-full h-32 p-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100'
           />
         </div>
 
-        <div className='text-sm text-gray-600 dark:text-gray-400'>
+        <div className='text-sm text-slate-600 dark:text-slate-400'>
           <p>说明:</p>
           <ul className='list-disc list-inside mt-1'>
             <li>编码: 将文本转换为 URL 安全的格式</li>

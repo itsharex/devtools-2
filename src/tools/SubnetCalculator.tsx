@@ -366,7 +366,7 @@ const SubnetCalculator: React.FC = () => {
         <div className='flex-1 overflow-auto p-4'>
           {/* IP版本选择器 */}
           <div className='mb-4'>
-            <label className='block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2'>
+            <label className='block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2'>
               IP版本
             </label>
             <div className='flex space-x-4'>
@@ -381,7 +381,7 @@ const SubnetCalculator: React.FC = () => {
                     }
                     className='mr-2'
                   />
-                  <span className='text-gray-700 dark:text-gray-200'>
+                  <span className='text-slate-700 dark:text-slate-200'>
                     {version === 'auto' ? '自动检测' : version.toUpperCase()}
                   </span>
                 </label>
@@ -392,7 +392,7 @@ const SubnetCalculator: React.FC = () => {
           {/* 输入区域 */}
           <div className='flex gap-3 mb-4'>
             <input
-              className='flex-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+              className='flex-1 p-3 border border-slate-300 rounded-lg shadow-sm focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
               placeholder={
                 ipVersion === 'ipv6'
                   ? '输入IPv6和前缀 (例如: 2001:db8::/64)'
@@ -404,14 +404,14 @@ const SubnetCalculator: React.FC = () => {
               onChange={(e) => setInput(e.target.value)}
             />
             <button
-              className='px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 whitespace-nowrap'
+              className='px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 whitespace-nowrap'
               onClick={handleCalculate}>
               计算
             </button>
           </div>
 
           {/* 示例提示 */}
-          <div className='mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-md'>
+          <div className='mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg'>
             <h4 className='font-medium text-blue-800 dark:text-blue-200 mb-2'>
               示例格式:
             </h4>
@@ -429,7 +429,7 @@ const SubnetCalculator: React.FC = () => {
           </div>
 
           {error && (
-            <div className='mb-4 p-4 bg-red-100 dark:bg-red-900 rounded-md'>
+            <div className='mb-4 p-4 bg-red-100 dark:bg-red-900 rounded-lg'>
               <p className='text-red-700 dark:text-red-100'>
                 <strong>错误:</strong> {error}
               </p>
@@ -437,26 +437,26 @@ const SubnetCalculator: React.FC = () => {
           )}
 
           {result.version && (
-            <div className='mb-4 p-4 bg-gray-100 dark:bg-gray-700 rounded-md'>
-              <h3 className='text-lg font-semibold mb-2 text-gray-800 dark:text-white'>
+            <div className='mb-4 p-4 bg-slate-100 dark:bg-slate-700 rounded-lg'>
+              <h3 className='text-lg font-semibold mb-2 text-slate-800 dark:text-white'>
                 计算结果 ({result.version})
               </h3>
               <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
                 {/* 基本信息 */}
                 <div className='flex justify-between'>
-                  <span className='text-gray-700 dark:text-gray-200'>
+                  <span className='text-slate-700 dark:text-slate-200'>
                     版本:
                   </span>
-                  <span className='font-mono text-gray-900 dark:text-white'>
+                  <span className='font-mono text-slate-900 dark:text-white'>
                     {result.version}
                   </span>
                 </div>
 
                 <div className='flex justify-between'>
-                  <span className='text-gray-700 dark:text-gray-200'>
+                  <span className='text-slate-700 dark:text-slate-200'>
                     CIDR:
                   </span>
-                  <span className='font-mono text-gray-900 dark:text-white'>
+                  <span className='font-mono text-slate-900 dark:text-white'>
                     {result.cidr}
                   </span>
                 </div>
@@ -465,18 +465,18 @@ const SubnetCalculator: React.FC = () => {
                 {result.version === 'IPv4' && (
                   <>
                     <div className='flex justify-between'>
-                      <span className='text-gray-700 dark:text-gray-200'>
+                      <span className='text-slate-700 dark:text-slate-200'>
                         子网掩码:
                       </span>
-                      <span className='font-mono text-gray-900 dark:text-white'>
+                      <span className='font-mono text-slate-900 dark:text-white'>
                         {result.mask}
                       </span>
                     </div>
                     <div className='flex justify-between'>
-                      <span className='text-gray-700 dark:text-gray-200'>
+                      <span className='text-slate-700 dark:text-slate-200'>
                         广播地址:
                       </span>
-                      <span className='font-mono text-gray-900 dark:text-white'>
+                      <span className='font-mono text-slate-900 dark:text-white'>
                         {result.broadcast}
                       </span>
                     </div>
@@ -485,48 +485,48 @@ const SubnetCalculator: React.FC = () => {
 
                 {/* 通用字段 */}
                 <div className='flex justify-between'>
-                  <span className='text-gray-700 dark:text-gray-200'>
+                  <span className='text-slate-700 dark:text-slate-200'>
                     网络地址:
                   </span>
-                  <span className='font-mono text-gray-900 dark:text-white break-all'>
+                  <span className='font-mono text-slate-900 dark:text-white break-all'>
                     {result.network}
                   </span>
                 </div>
 
                 <div className='flex justify-between'>
-                  <span className='text-gray-700 dark:text-gray-200'>
+                  <span className='text-slate-700 dark:text-slate-200'>
                     {result.version === 'IPv4' ? '第一个可用IP:' : '网络前缀:'}
                   </span>
-                  <span className='font-mono text-gray-900 dark:text-white break-all'>
+                  <span className='font-mono text-slate-900 dark:text-white break-all'>
                     {result.firstIp}
                   </span>
                 </div>
 
                 {result.version === 'IPv4' && (
                   <div className='flex justify-between'>
-                    <span className='text-gray-700 dark:text-gray-200'>
+                    <span className='text-slate-700 dark:text-slate-200'>
                       最后一个可用IP:
                     </span>
-                    <span className='font-mono text-gray-900 dark:text-white'>
+                    <span className='font-mono text-slate-900 dark:text-white'>
                       {result.lastIp}
                     </span>
                   </div>
                 )}
 
                 <div className='flex justify-between'>
-                  <span className='text-gray-700 dark:text-gray-200'>
+                  <span className='text-slate-700 dark:text-slate-200'>
                     {result.version === 'IPv4' ? '总IP数:' : '总地址数:'}
                   </span>
-                  <span className='font-mono text-gray-900 dark:text-white'>
+                  <span className='font-mono text-slate-900 dark:text-white'>
                     {result.totalIps}
                   </span>
                 </div>
 
                 <div className='flex justify-between'>
-                  <span className='text-gray-700 dark:text-gray-200'>
+                  <span className='text-slate-700 dark:text-slate-200'>
                     {result.version === 'IPv4' ? '可用IP数:' : '可用地址数:'}
                   </span>
-                  <span className='font-mono text-gray-900 dark:text-white'>
+                  <span className='font-mono text-slate-900 dark:text-white'>
                     {result.usableIps}
                   </span>
                 </div>
@@ -535,18 +535,18 @@ const SubnetCalculator: React.FC = () => {
                 {result.version === 'IPv6' && (
                   <>
                     <div className='flex justify-between'>
-                      <span className='text-gray-700 dark:text-gray-200'>
+                      <span className='text-slate-700 dark:text-slate-200'>
                         网络部分:
                       </span>
-                      <span className='font-mono text-gray-900 dark:text-white break-all'>
+                      <span className='font-mono text-slate-900 dark:text-white break-all'>
                         {result.networkPortion}
                       </span>
                     </div>
                     <div className='flex justify-between'>
-                      <span className='text-gray-700 dark:text-gray-200'>
+                      <span className='text-slate-700 dark:text-slate-200'>
                         主机部分:
                       </span>
-                      <span className='font-mono text-gray-900 dark:text-white break-all'>
+                      <span className='font-mono text-slate-900 dark:text-white break-all'>
                         {result.hostPortion || 'N/A'}
                       </span>
                     </div>

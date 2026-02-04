@@ -100,17 +100,17 @@ const TimestampConverter: React.FC = () => {
         <div className='flex-1 overflow-auto p-4'>
           <div className='mb-4'>
             <div className='mb-4'>
-              <label className='block text-gray-700 dark:text-gray-200 mb-2'>
+              <label className='block text-slate-700 dark:text-slate-200 mb-2'>
                 当前时间
               </label>
-              <div className='p-3 bg-gray-100 dark:bg-gray-700 rounded-md'>
-                <p className='text-gray-700 dark:text-gray-200'>
+              <div className='p-3 bg-slate-100 dark:bg-slate-700 rounded-lg'>
+                <p className='text-slate-700 dark:text-slate-200'>
                   时间戳（秒）: {currentTime.seconds}
                 </p>
-                <p className='text-gray-700 dark:text-gray-200'>
+                <p className='text-slate-700 dark:text-slate-200'>
                   时间戳（毫秒）: {currentTime.milliseconds}
                 </p>
-                <p className='text-gray-700 dark:text-gray-200'>
+                <p className='text-slate-700 dark:text-slate-200'>
                   当前时间:{' '}
                   {new Date(currentTime.milliseconds).toLocaleString('zh-CN', {
                     timeZone: timeZone,
@@ -123,20 +123,20 @@ const TimestampConverter: React.FC = () => {
             <div className='grid grid-cols-1 md:grid-cols-1 gap-4 mb-4'>
               <div className='flex-1'>
                 <div className='flex items-center gap-2 mb-2'>
-                  <label className='text-gray-700 dark:text-gray-200 whitespace-nowrap w-24'>
+                  <label className='text-slate-700 dark:text-slate-200 whitespace-nowrap w-24'>
                     输入
                   </label>
                   <div className='flex-1'>
                     <div className='flex'>
                       <input
                         type='text'
-                        className='w-full p-1 border border-gray-300 rounded-l-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+                        className='w-full p-1 border border-slate-300 rounded-l-md shadow-sm focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
                         placeholder='输入时间戳或日期时间'
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
                       />
                       <button
-                        className='min-w-[80px] px-1 py-1 bg-blue-500 text-white rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
+                        className='min-w-[80px] px-1 py-1 bg-blue-500 text-white rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2'
                         onClick={useCurrentTime}>
                         当前时间
                       </button>
@@ -146,12 +146,12 @@ const TimestampConverter: React.FC = () => {
 
                 <div className='flex-1'>
                   <div className='flex items-center gap-2 mb-2'>
-                    <label className='text-gray-700 dark:text-gray-200 whitespace-nowrap w-24'>
+                    <label className='text-slate-700 dark:text-slate-200 whitespace-nowrap w-24'>
                       转换类型
                     </label>
                     <div className='flex-1'>
                       <select
-                        className='w-full p-4 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+                        className='w-full p-4 border border-slate-300 rounded-lg shadow-sm focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
                         value={conversionType}
                         onChange={(e) =>
                           setConversionType(
@@ -175,12 +175,12 @@ const TimestampConverter: React.FC = () => {
 
             <div className='mt-2'>
               <div className='flex items-center gap-2 mb-2'>
-                <label className='text-gray-700 dark:text-gray-200 whitespace-nowrap w-24'>
+                <label className='text-slate-700 dark:text-slate-200 whitespace-nowrap w-24'>
                   时区选择
                 </label>
                 <div className='flex-1'>
                   <select
-                    className='w-full p-4 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+                    className='w-full p-4 border border-slate-300 rounded-lg shadow-sm focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
                     value={timeZone}
                     onChange={(e) => setTimeZone(e.target.value)}>
                     {allTimeZones.map(
@@ -197,7 +197,7 @@ const TimestampConverter: React.FC = () => {
 
             {conversionType === 'timestampToDatetime' && (
               <div className='mb-4 flex items-center mt-4'>
-                <label className='block text-gray-700 dark:text-gray-200 mr-2 w-24'>
+                <label className='block text-slate-700 dark:text-slate-200 mr-2 w-24'>
                   毫秒单位
                 </label>
                 <div className='relative inline-block mr-2 align-middle select-none'>
@@ -212,26 +212,26 @@ const TimestampConverter: React.FC = () => {
                     htmlFor='toggle-milliseconds'
                     className='toggle-label'></label>
                 </div>
-                <span className='text-gray-700 dark:text-gray-200'>
+                <span className='text-slate-700 dark:text-slate-200'>
                   {isMilliseconds ? '开启' : '关闭'}
                 </span>
               </div>
             )}
 
             <button
-              className='px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
+              className='px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2'
               onClick={handleConvert}>
               转换
             </button>
 
             <div className='mt-4'>
               <div className='flex items-center gap-2 mb-2'>
-                <label className='text-gray-700 dark:text-gray-200 whitespace-nowrap w-24'>
+                <label className='text-slate-700 dark:text-slate-200 whitespace-nowrap w-24'>
                   转换结果
                 </label>
                 <div className='flex-1'>
                   <input
-                    className='w-full p-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+                    className='w-full p-1 border border-slate-300 rounded-lg shadow-sm focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
                     placeholder='转换结果'
                     value={convertedValue}
                     readOnly

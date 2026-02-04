@@ -147,7 +147,7 @@ const IpInfo: React.FC = () => {
                 }
               }}
               placeholder='请输入IP地址，留空则查询当前IP'
-              className='flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+              className='flex-1 px-3 py-2 border border-slate-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
             />
             <div className='flex gap-2'>
               <Button
@@ -168,7 +168,7 @@ const IpInfo: React.FC = () => {
         </div>
 
         {error && (
-          <div className='mb-4 p-3 bg-red-100 text-red-700 rounded-md dark:bg-red-900 dark:text-red-100'>
+          <div className='mb-4 p-3 bg-red-100 text-red-700 rounded-lg dark:bg-red-900 dark:text-red-100'>
             {error}
           </div>
         )}
@@ -176,8 +176,8 @@ const IpInfo: React.FC = () => {
         <div className='flex flex-col md:flex-row gap-4'>
           {loading && infos.length === 0 && (
             <>
-              <div className='flex-1 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg animate-pulse h-48' />
-              <div className='flex-1 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg animate-pulse h-48' />
+              <div className='flex-1 p-6 bg-slate-100 dark:bg-slate-800 rounded-lg animate-pulse h-48' />
+              <div className='flex-1 p-6 bg-slate-100 dark:bg-slate-800 rounded-lg animate-pulse h-48' />
             </>
           )}
 
@@ -185,17 +185,17 @@ const IpInfo: React.FC = () => {
             infos.map((info) => (
               <div
                 key={info.source}
-                className='bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 flex-1'>
-                <h3 className='text-lg font-semibold mb-4 text-gray-800 dark:text-white'>
+                className='bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 flex-1'>
+                <h3 className='text-lg font-semibold mb-4 text-slate-800 dark:text-white'>
                   {`IP 信息 (${info.source})`}
                 </h3>
                 <div className='flex flex-col gap-2'>
                   <div className='flex items-center'>
-                    <p className='text-sm text-gray-600 dark:text-gray-400 w-16'>
+                    <p className='text-sm text-slate-600 dark:text-slate-400 w-16'>
                       IP 地址:
                     </p>
                     <div className='ml-2 flex items-center gap-2'>
-                      <p className='font-medium text-gray-900 dark:text-white'>
+                      <p className='font-medium text-slate-900 dark:text-white'>
                         {info.ip || 'N/A'}
                       </p>
                       {info.ip && (
@@ -203,7 +203,7 @@ const IpInfo: React.FC = () => {
                           type='button'
                           title='复制 IP'
                           onClick={() => copyToClipboard(info.ip as string)}
-                          className='p-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-white rounded hover:bg-gray-200 dark:hover:bg-gray-600 flex items-center justify-center'>
+                          className='p-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-white rounded hover:bg-slate-200 dark:hover:bg-gray-600 flex items-center justify-center'>
                           <svg
                             xmlns='http://www.w3.org/2000/svg'
                             className='w-4 h-4'
@@ -223,46 +223,46 @@ const IpInfo: React.FC = () => {
                   </div>
 
                   <div className='flex items-center'>
-                    <p className='text-sm text-gray-600 dark:text-gray-400 w-16'>
+                    <p className='text-sm text-slate-600 dark:text-slate-400 w-16'>
                       国家:
                     </p>
-                    <p className='font-medium text-gray-900 dark:text-white ml-2'>
+                    <p className='font-medium text-slate-900 dark:text-white ml-2'>
                       {info.country || 'N/A'}
                     </p>
                   </div>
 
                   <div className='flex items-center'>
-                    <p className='text-sm text-gray-600 dark:text-gray-400 w-16'>
+                    <p className='text-sm text-slate-600 dark:text-slate-400 w-16'>
                       城市:
                     </p>
-                    <p className='font-medium text-gray-900 dark:text-white ml-2'>
+                    <p className='font-medium text-slate-900 dark:text-white ml-2'>
                       {info.city || 'N/A'}
                     </p>
                   </div>
 
                   <div className='flex items-center'>
-                    <p className='text-sm text-gray-600 dark:text-gray-400 w-16'>
+                    <p className='text-sm text-slate-600 dark:text-slate-400 w-16'>
                       地区:
                     </p>
-                    <p className='font-medium text-gray-900 dark:text-white ml-2'>
+                    <p className='font-medium text-slate-900 dark:text-white ml-2'>
                       {info.region || 'N/A'}
                     </p>
                   </div>
 
                   <div className='flex items-center'>
-                    <p className='text-sm text-gray-600 dark:text-gray-400 w-16'>
+                    <p className='text-sm text-slate-600 dark:text-slate-400 w-16'>
                       运营商:
                     </p>
-                    <p className='font-medium text-gray-900 dark:text-white ml-2'>
+                    <p className='font-medium text-slate-900 dark:text-white ml-2'>
                       {info.org || 'N/A'}
                     </p>
                   </div>
 
                   <div className='flex items-center'>
-                    <p className='text-sm text-gray-600 dark:text-gray-400 w-16'>
+                    <p className='text-sm text-slate-600 dark:text-slate-400 w-16'>
                       时区:
                     </p>
-                    <p className='font-medium text-gray-900 dark:text-white ml-2'>
+                    <p className='font-medium text-slate-900 dark:text-white ml-2'>
                       {info.timezone || 'N/A'}
                     </p>
                   </div>
@@ -274,27 +274,27 @@ const IpInfo: React.FC = () => {
         {showRaw && rawJson && (
           <div className='mt-4'>
             <div className='flex items-center justify-between'>
-              <h4 className='text-sm font-medium mb-2 text-gray-700 dark:text-white'>
+              <h4 className='text-sm font-medium mb-2 text-slate-700 dark:text-white'>
                 原始响应
               </h4>
               <div className='flex items-center gap-2'>
                 <button
                   type='button'
                   onClick={copyRawJson}
-                  className='px-2 py-1 text-sm bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-white rounded-md hover:bg-gray-200 dark:hover:bg-gray-600'>
+                  className='px-2 py-1 text-sm bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-white rounded-lg hover:bg-slate-200 dark:hover:bg-gray-600'>
                   复制全部
                 </button>
               </div>
             </div>
             <div
-              className='bg-gray-50 dark:bg-gray-900 p-2 rounded text-xs overflow-auto font-mono'
+              className='bg-slate-50 dark:bg-slate-900 p-2 rounded text-xs overflow-auto font-mono'
               style={{ maxHeight: 300 }}>
               {rawJson.split('\n').map((line, idx) => (
                 <div key={idx} className='flex'>
-                  <div className='w-12 text-right pr-3 text-gray-500 dark:text-gray-400 select-none'>
+                  <div className='w-12 text-right pr-3 text-slate-500 dark:text-slate-400 select-none'>
                     {idx + 1}
                   </div>
-                  <div className='flex-1 text-gray-900 dark:text-white whitespace-pre-wrap'>
+                  <div className='flex-1 text-slate-900 dark:text-white whitespace-pre-wrap'>
                     {line === '' ? ' ' : line}
                   </div>
                 </div>

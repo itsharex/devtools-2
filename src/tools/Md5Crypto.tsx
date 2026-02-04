@@ -270,12 +270,12 @@ const Md5Crypto: React.FC = () => {
     <ToolLayout title='MD5 加密工具' subtitle='对文本和文件内容进行 MD5 加密'>
       <div className='flex flex-col h-full'>
         {/* 选项卡 */}
-        <div className='flex border-b border-gray-200 dark:border-gray-700 mb-4'>
+        <div className='flex border-b border-slate-200 dark:border-slate-700 mb-4'>
           <button
             className={`px-4 py-2 font-medium text-sm ${
               activeTab === 'text'
                 ? 'border-b-2 border-blue-500 text-blue-600 dark:text-blue-400'
-                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
+                : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
             }`}
             onClick={() => setActiveTab('text')}>
             文本加密
@@ -284,7 +284,7 @@ const Md5Crypto: React.FC = () => {
             className={`px-4 py-2 font-medium text-sm ${
               activeTab === 'file'
                 ? 'border-b-2 border-blue-500 text-blue-600 dark:text-blue-400'
-                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
+                : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
             }`}
             onClick={() => setActiveTab('file')}>
             文件加密
@@ -293,7 +293,7 @@ const Md5Crypto: React.FC = () => {
             className={`px-4 py-2 font-medium text-sm ${
               activeTab === 'batch'
                 ? 'border-b-2 border-blue-500 text-blue-600 dark:text-blue-400'
-                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
+                : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
             }`}
             onClick={() => setActiveTab('batch')}>
             批量加密
@@ -305,7 +305,7 @@ const Md5Crypto: React.FC = () => {
           <div className='flex-1 flex flex-col p-4'>
             <div className='mb-4'>
               <div className='mb-2 flex items-center justify-between'>
-                <div className='text-sm text-gray-600 dark:text-gray-400'>
+                <div className='text-sm text-slate-600 dark:text-slate-400'>
                   输入长度: {textInput.length}
                 </div>
                 <div className='flex items-center space-x-2'>
@@ -322,7 +322,7 @@ const Md5Crypto: React.FC = () => {
                 </div>
               </div>
               <textarea
-                className='w-full h-40 resize-none border border-gray-300 dark:border-gray-600 rounded-md p-3 text-sm font-mono bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                className='w-full h-40 resize-none border border-slate-300 dark:border-slate-600 rounded-lg p-3 text-sm font-mono bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-500'
                 placeholder='请输入要加密的文本...'
                 value={textInput}
                 onChange={(e) => setTextInput(e.target.value)}
@@ -330,7 +330,7 @@ const Md5Crypto: React.FC = () => {
             </div>
 
             {textError && (
-              <div className='mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md'>
+              <div className='mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg'>
                 <p className='text-red-700 dark:text-red-400 text-sm'>
                   {textError}
                 </p>
@@ -339,7 +339,7 @@ const Md5Crypto: React.FC = () => {
 
             <div className='flex-1 flex flex-col'>
               <div className='mb-2 flex items-center justify-between'>
-                <h3 className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+                <h3 className='text-sm font-medium text-slate-700 dark:text-slate-300'>
                   MD5 哈希值
                 </h3>
                 <Button
@@ -351,8 +351,8 @@ const Md5Crypto: React.FC = () => {
                   {copied ? '已复制' : '复制结果'}
                 </Button>
               </div>
-              <div className='flex-1 p-3 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md'>
-                <p className='font-mono text-sm break-all text-gray-900 dark:text-gray-100'>
+              <div className='flex-1 p-3 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg'>
+                <p className='font-mono text-sm break-all text-slate-900 dark:text-slate-100'>
                   {textMd5Hash || 'MD5 哈希值将在这里显示...'}
                 </p>
               </div>
@@ -365,7 +365,7 @@ const Md5Crypto: React.FC = () => {
           <div className='flex-1 flex flex-col p-4'>
             <div className='mb-4'>
               <div className='mb-2 flex items-center justify-between'>
-                <h3 className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+                <h3 className='text-sm font-medium text-slate-700 dark:text-slate-300'>
                   选择文件
                 </h3>
                 <Button
@@ -391,7 +391,7 @@ const Md5Crypto: React.FC = () => {
             </div>
 
             {fileError && (
-              <div className='mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md'>
+              <div className='mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg'>
                 <p className='text-red-700 dark:text-red-400 text-sm'>
                   {fileError}
                 </p>
@@ -400,7 +400,7 @@ const Md5Crypto: React.FC = () => {
 
             <div className='flex-1 flex flex-col'>
               <div className='mb-2 flex items-center justify-between'>
-                <h3 className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+                <h3 className='text-sm font-medium text-slate-700 dark:text-slate-300'>
                   MD5 哈希值
                 </h3>
                 <Button
@@ -412,13 +412,13 @@ const Md5Crypto: React.FC = () => {
                   {copied ? '已复制' : '复制结果'}
                 </Button>
               </div>
-              <div className='flex-1 p-3 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md flex items-center justify-center'>
+              <div className='flex-1 p-3 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg flex items-center justify-center'>
                 {isProcessingFile ? (
-                  <p className='text-gray-500 dark:text-gray-400 text-sm'>
+                  <p className='text-slate-500 dark:text-slate-400 text-sm'>
                     正在处理文件...
                   </p>
                 ) : (
-                  <p className='font-mono text-sm break-all text-gray-900 dark:text-gray-100'>
+                  <p className='font-mono text-sm break-all text-slate-900 dark:text-slate-100'>
                     {fileMd5Hash || 'MD5 哈希值将在这里显示...'}
                   </p>
                 )}
@@ -432,7 +432,7 @@ const Md5Crypto: React.FC = () => {
           <div className='flex-1 flex flex-col p-4'>
             <div className='mb-4'>
               <div className='mb-2 flex items-center justify-between'>
-                <h3 className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+                <h3 className='text-sm font-medium text-slate-700 dark:text-slate-300'>
                   选择多个文件 ({batchFiles.length})
                 </h3>
                 <div className='flex items-center space-x-2'>
@@ -453,7 +453,7 @@ const Md5Crypto: React.FC = () => {
             {batchFiles.length > 0 && (
               <div className='mb-4'>
                 <div className='mb-2 flex items-center justify-between'>
-                  <h3 className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+                  <h3 className='text-sm font-medium text-slate-700 dark:text-slate-300'>
                     文件列表 {isProcessingBatch && '(处理中...)'}
                   </h3>
                   <div className='flex items-center space-x-2'>
@@ -480,17 +480,17 @@ const Md5Crypto: React.FC = () => {
                     </Button>
                   </div>
                 </div>
-                <div className='border border-gray-300 dark:border-gray-600 rounded-md overflow-hidden max-h-[50vh] overflow-y-auto'>
+                <div className='border border-slate-300 dark:border-slate-600 rounded-lg overflow-hidden max-h-[50vh] overflow-y-auto'>
                   <table className='w-full text-sm'>
-                    <thead className='bg-gray-50 dark:bg-gray-800'>
+                    <thead className='bg-slate-50 dark:bg-slate-800'>
                       <tr>
-                        <th className='px-3 py-2 text-left font-medium text-gray-700 dark:text-gray-300'>
+                        <th className='px-3 py-2 text-left font-medium text-slate-700 dark:text-slate-300'>
                           文件名
                         </th>
-                        <th className='px-3 py-2 text-left font-medium text-gray-700 dark:text-gray-300'>
+                        <th className='px-3 py-2 text-left font-medium text-slate-700 dark:text-slate-300'>
                           状态
                         </th>
-                        <th className='px-3 py-2 text-left font-medium text-gray-700 dark:text-gray-300'>
+                        <th className='px-3 py-2 text-left font-medium text-slate-700 dark:text-slate-300'>
                           MD5 哈希值
                         </th>
                       </tr>
@@ -499,13 +499,13 @@ const Md5Crypto: React.FC = () => {
                       {batchFiles.map((file, index) => (
                         <tr
                           key={index}
-                          className='hover:bg-gray-50 dark:hover:bg-gray-800'>
-                          <td className='px-3 py-2 text-gray-900 dark:text-gray-100 truncate max-w-xs'>
+                          className='hover:bg-slate-50 dark:hover:bg-slate-800'>
+                          <td className='px-3 py-2 text-slate-900 dark:text-slate-100 truncate max-w-xs'>
                             {file.name}
                           </td>
                           <td className='px-3 py-2'>
                             {file.status === 'pending' && (
-                              <span className='inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'>
+                              <span className='inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-200'>
                                 待处理
                               </span>
                             )}
@@ -525,7 +525,7 @@ const Md5Crypto: React.FC = () => {
                               </span>
                             )}
                           </td>
-                          <td className='px-3 py-2 font-mono text-xs text-gray-900 dark:text-gray-100 truncate max-w-xs'>
+                          <td className='px-3 py-2 font-mono text-xs text-slate-900 dark:text-slate-100 truncate max-w-xs'>
                             {file.md5 || '-'}
                           </td>
                         </tr>
@@ -539,7 +539,7 @@ const Md5Crypto: React.FC = () => {
             {batchFiles.length === 0 && (
               <div className='flex-1 flex items-center justify-center'>
                 <div className='text-center'>
-                  <div className='text-gray-400 mb-2'>
+                  <div className='text-slate-400 mb-2'>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
                       className='h-12 w-12 mx-auto'
@@ -554,7 +554,7 @@ const Md5Crypto: React.FC = () => {
                       />
                     </svg>
                   </div>
-                  <p className='text-gray-500 dark:text-gray-400 text-sm'>
+                  <p className='text-slate-500 dark:text-slate-400 text-sm'>
                     点击"选择文件"按钮选择多个文件进行批量MD5加密
                   </p>
                 </div>

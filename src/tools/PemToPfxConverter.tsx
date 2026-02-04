@@ -381,7 +381,7 @@ const PemToPfxConverter: React.FC = () => {
                 <p className='font-medium text-blue-800 dark:text-blue-200 mb-1'>
                   基本转换：
                 </p>
-                <code className='block p-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono text-blue-700 dark:text-blue-300'>
+                <code className='block p-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded font-mono text-blue-700 dark:text-blue-300'>
                   openssl pkcs12 -export -out certificate.pfx -inkey private.key
                   -in certificate.crt
                 </code>
@@ -390,7 +390,7 @@ const PemToPfxConverter: React.FC = () => {
                 <p className='font-medium text-blue-800 dark:text-blue-200 mb-1'>
                   带私钥密码：
                 </p>
-                <code className='block p-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono text-blue-700 dark:text-blue-300'>
+                <code className='block p-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded font-mono text-blue-700 dark:text-blue-300'>
                   openssl pkcs12 -export -out certificate.pfx -inkey private.key
                   -in certificate.crt -passin pass:私钥密码 -passout
                   pass:PFX密码
@@ -400,7 +400,7 @@ const PemToPfxConverter: React.FC = () => {
                 <p className='font-medium text-blue-800 dark:text-blue-200 mb-1'>
                   从PEM文件：
                 </p>
-                <code className='block p-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono text-blue-700 dark:text-blue-300'>
+                <code className='block p-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded font-mono text-blue-700 dark:text-blue-300'>
                   openssl pkcs12 -export -out certificate.pfx -inkey key.pem -in
                   cert.pem -certfile chain.pem
                 </code>
@@ -409,7 +409,7 @@ const PemToPfxConverter: React.FC = () => {
                 <p className='font-medium text-blue-800 dark:text-blue-200 mb-1'>
                   仅证书和私钥：
                 </p>
-                <code className='block p-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono text-blue-700 dark:text-blue-300'>
+                <code className='block p-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded font-mono text-blue-700 dark:text-blue-300'>
                   openssl pkcs12 -export -out certificate.pfx -inkey private.pem
                   -in cert.pem
                 </code>
@@ -423,8 +423,8 @@ const PemToPfxConverter: React.FC = () => {
         )}
 
         {/* PEM证书输入 */}
-        <div className='border border-gray-200 dark:border-gray-700 rounded-lg p-4'>
-          <h3 className='text-lg font-semibold mb-3 text-gray-900 dark:text-white'>
+        <div className='border border-slate-200 dark:border-slate-700 rounded-lg p-4'>
+          <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>
             PEM证书
           </h3>
           <FileUpload
@@ -452,8 +452,8 @@ const PemToPfxConverter: React.FC = () => {
 
         {/* 私钥输入 - 仅在证书已输入但不包含私钥时显示 */}
         {certInfo.hasCert && !certInfo.hasPrivateKey && (
-          <div className='border border-gray-200 dark:border-gray-700 rounded-lg p-4'>
-            <h3 className='text-lg font-semibold mb-3 text-gray-900 dark:text-white'>
+          <div className='border border-slate-200 dark:border-slate-700 rounded-lg p-4'>
+            <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>
               私钥 *
             </h3>
             <FileUpload
@@ -474,8 +474,8 @@ const PemToPfxConverter: React.FC = () => {
         )}
 
         {/* 密码设置区域 */}
-        <div className='border border-gray-200 dark:border-gray-700 rounded-lg p-4'>
-          <h3 className='text-lg font-semibold mb-3 text-gray-900 dark:text-white'>
+        <div className='border border-slate-200 dark:border-slate-700 rounded-lg p-4'>
+          <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>
             密码设置
           </h3>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
@@ -490,7 +490,7 @@ const PemToPfxConverter: React.FC = () => {
               return needsPassword ? (
                 <div>
                   <div className='flex flex-col sm:flex-row sm:items-center sm:space-x-3 space-y-2 sm:space-y-0'>
-                    <label className='w-28 shrink-0 text-sm font-medium text-gray-700 dark:text-gray-300 mb-0'>
+                    <label className='w-28 shrink-0 text-sm font-medium text-slate-700 dark:text-slate-300 mb-0'>
                       {(() => {
                         const effectiveKey = (
                           privateKeyContent ||
@@ -515,14 +515,14 @@ const PemToPfxConverter: React.FC = () => {
                         value={privateKeyPassword}
                         onChange={(e) => setPrivateKeyPassword(e.target.value)}
                         placeholder='如果私钥需要密码...'
-                        className='w-full px-3 py-2 pr-10 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                        className='w-full px-3 py-2 pr-10 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-500'
                       />
                       <button
                         type='button'
                         onClick={() =>
                           setShowPrivateKeyPassword(!showPrivateKeyPassword)
                         }
-                        className='absolute inset-y-0 right-0 px-3 flex items-center text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
+                        className='absolute inset-y-0 right-0 px-3 flex items-center text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
                         title={
                           showPrivateKeyPassword ? '隐藏密码' : '显示密码'
                         }>
@@ -578,7 +578,7 @@ const PemToPfxConverter: React.FC = () => {
                 return needsPassword ? '' : 'md:col-span-2'
               })()}>
               <div className='flex flex-col sm:flex-row sm:items-center sm:space-x-3 space-y-2 sm:space-y-0'>
-                <label className='w-28 shrink-0 text-sm font-medium text-gray-700 dark:text-gray-300 mb-0'>
+                <label className='w-28 shrink-0 text-sm font-medium text-slate-700 dark:text-slate-300 mb-0'>
                   PFX密码 *
                 </label>
                 <div className='relative w-full'>
@@ -587,12 +587,12 @@ const PemToPfxConverter: React.FC = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder='设置PFX文件密码...'
-                    className='w-full px-3 py-2 pr-10 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                    className='w-full px-3 py-2 pr-10 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-500'
                   />
                   <button
                     type='button'
                     onClick={() => setShowPfxPassword(!showPfxPassword)}
-                    className='absolute inset-y-0 right-0 px-3 flex items-center text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
+                    className='absolute inset-y-0 right-0 px-3 flex items-center text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
                     title={showPfxPassword ? '隐藏密码' : '显示密码'}>
                     {showPfxPassword ? (
                       <svg
@@ -630,7 +630,7 @@ const PemToPfxConverter: React.FC = () => {
                   </button>
                 </div>
               </div>
-              <p className='mt-1 text-xs text-gray-600 dark:text-gray-400'>
+              <p className='mt-1 text-xs text-slate-600 dark:text-slate-400'>
                 用于保护生成的PFX文件
               </p>
             </div>
@@ -656,7 +656,7 @@ const PemToPfxConverter: React.FC = () => {
 
         {formError && (
           <div
-            className='mt-3 p-3 rounded-md border text-sm '
+            className='mt-3 p-3 rounded-lg border text-sm '
             style={{
               backgroundColor: formError.includes('成功')
                 ? 'var(--tw-color-green-50, #f0fdf4)'
@@ -675,8 +675,8 @@ const PemToPfxConverter: React.FC = () => {
 
         {/* 结果下载区域 */}
         {pfxData && (
-          <div className='border border-gray-200 dark:border-gray-700 rounded-lg p-4'>
-            <h3 className='text-lg font-semibold mb-3 text-gray-900 dark:text-white'>
+          <div className='border border-slate-200 dark:border-slate-700 rounded-lg p-4'>
+            <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>
               转换结果
             </h3>
             <div className='space-y-3'>

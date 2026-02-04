@@ -167,10 +167,10 @@ const JwtEncode: React.FC = () => {
           {/* Header 输入部分 */}
           <div className='flex flex-col'>
             <div className='mb-3 h-[75px]'>
-              <h3 className='text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1'>
+              <h3 className='text-lg font-semibold text-slate-800 dark:text-slate-200 mb-1'>
                 Header
               </h3>
-              <p className='text-sm text-gray-600 dark:text-gray-400'>
+              <p className='text-sm text-slate-600 dark:text-slate-400'>
                 包含令牌的元数据，如签名算法(alg)和类型(typ)
               </p>
             </div>
@@ -203,10 +203,10 @@ const JwtEncode: React.FC = () => {
           {/* Payload 输入部分 */}
           <div className='flex flex-col'>
             <div className='mb-3 h-[75px]'>
-              <h3 className='text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1'>
+              <h3 className='text-lg font-semibold text-slate-800 dark:text-slate-200 mb-1'>
                 Payload
               </h3>
-              <p className='text-sm text-gray-600 dark:text-gray-400'>
+              <p className='text-sm text-slate-600 dark:text-slate-400'>
                 包含声明(claims)，如主题(sub)、签发者(iss)、签发时间(iat)和过期时间(exp)
               </p>
             </div>
@@ -241,12 +241,12 @@ const JwtEncode: React.FC = () => {
         <div className='space-y-4'>
           {/* 有效期输入 */}
           <div className='flex items-center space-x-4'>
-            <label className='text-lg font-medium text-gray-700 dark:text-gray-200 w-24 flex-shrink-0'>
+            <label className='text-lg font-medium text-slate-700 dark:text-slate-200 w-24 flex-shrink-0'>
               有效期 (秒)
             </label>
             <input
               type='number'
-              className='flex-1 p-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white'
+              className='flex-1 p-2 border border-slate-300 dark:border-slate-600 rounded-lg shadow-sm focus:ring-2 focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-800 dark:text-white'
               placeholder='输入有效期'
               value={expiresIn}
               onChange={(e) => setExpiresIn(e.target.value)}
@@ -257,12 +257,12 @@ const JwtEncode: React.FC = () => {
           <div>
             {header.alg.startsWith('HS') ? (
               <div className='flex items-center space-x-4'>
-                <label className='text-lg font-medium text-gray-700 dark:text-gray-200 w-24 flex-shrink-0'>
+                <label className='text-lg font-medium text-slate-700 dark:text-slate-200 w-24 flex-shrink-0'>
                   Secret Key
                 </label>
                 <input
                   type='text'
-                  className='flex-1 p-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white'
+                  className='flex-1 p-2 border border-slate-300 dark:border-slate-600 rounded-lg shadow-sm focus:ring-2 focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-800 dark:text-white'
                   placeholder='输入 Secret Key'
                   value={secretKey}
                   onChange={(e) => setSecretKey(e.target.value)}
@@ -270,7 +270,7 @@ const JwtEncode: React.FC = () => {
               </div>
             ) : (
               <div>
-                <label className='block text-lg font-medium text-gray-700 dark:text-gray-200 mb-2'>
+                <label className='block text-lg font-medium text-slate-700 dark:text-slate-200 mb-2'>
                   RSA Private Key
                 </label>
                 <FileUpload
@@ -319,7 +319,7 @@ const JwtEncode: React.FC = () => {
         {output && (
           <div className='flex-shrink-0'>
             <div className='flex items-center justify-between mb-3'>
-              <h3 className='text-lg font-semibold text-gray-800 dark:text-gray-200'>
+              <h3 className='text-lg font-semibold text-slate-800 dark:text-slate-200'>
                 生成的JWT
               </h3>
               {!output.startsWith('生成出错') && (
@@ -333,10 +333,10 @@ const JwtEncode: React.FC = () => {
               )}
             </div>
             <textarea
-              className={`w-full h-24 p-3 border rounded-md shadow-sm font-mono text-sm resize-none focus:outline-none ${
+              className={`w-full h-24 p-3 border rounded-lg shadow-sm font-mono text-sm resize-none focus:outline-none ${
                 output.startsWith('生成出错')
                   ? 'border-red-300 bg-red-50 text-red-700 dark:bg-red-900/20 dark:border-red-700 dark:text-red-400'
-                  : 'border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100'
+                  : 'border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 text-slate-900 dark:text-slate-100'
               }`}
               value={output}
               readOnly

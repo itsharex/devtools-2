@@ -107,27 +107,29 @@ const Base64Converter: React.FC = () => {
   return (
     <ToolLayout title={getModeTitle()} subtitle={getModeSubtitle()}>
       <div className='flex flex-col h-full'>
-        {/* 模式切换区域 */}
-        <div className='flex-shrink-0 p-4 border-b border-gray-200 dark:border-gray-700'>
+        {/* 模式切换区域 - 现代设计 */}
+        <div className='flex-shrink-0 p-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-900/50 transition-colors duration-300'>
           <div className='flex items-center justify-between'>
             <div className='flex items-center space-x-4'>
-              <div className='flex items-center space-x-2'>
+              <div className='flex items-center space-x-2 bg-slate-200/50 dark:bg-slate-700/50 rounded-lg p-1'>
                 <button
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 ${
                     mode === 'encode'
-                      ? 'bg-blue-500 text-white'
-                      : 'bg-gray-200 text-gray-700 dark:bg-gray-600 dark:text-gray-300'
+                      ? 'bg-white dark:bg-slate-600 text-primary-700 dark:text-primary-300 shadow-sm'
+                      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-600/50'
                   }`}
-                  onClick={() => setMode('encode')}>
+                  onClick={() => setMode('encode')}
+                  aria-label='Encode mode'>
                   编码
                 </button>
                 <button
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 ${
                     mode === 'decode'
-                      ? 'bg-blue-500 text-white'
-                      : 'bg-gray-200 text-gray-700 dark:bg-gray-600 dark:text-gray-300'
+                      ? 'bg-white dark:bg-slate-600 text-primary-700 dark:text-primary-300 shadow-sm'
+                      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-600/50'
                   }`}
-                  onClick={() => setMode('decode')}>
+                  onClick={() => setMode('decode')}
+                  aria-label='Decode mode'>
                   解码
                 </button>
               </div>
@@ -150,8 +152,8 @@ const Base64Converter: React.FC = () => {
         {/* 输入区域 */}
         <div className='flex-1 flex flex-col p-4'>
           <div className='mb-2 flex items-center justify-between'>
-            <div className='text-sm text-gray-600 dark:text-gray-400'>
-              输入长度: {input.length}
+            <div className='text-sm text-slate-600 dark:text-slate-400 font-medium'>
+              输入长度: <span className='font-mono text-primary-600 dark:text-primary-400'>{input.length}</span>
             </div>
             <Button
               variant='secondary'
@@ -162,7 +164,7 @@ const Base64Converter: React.FC = () => {
             </Button>
           </div>
           <textarea
-            className='w-full h-full resize-none border border-gray-300 dark:border-gray-600 rounded-md p-3 text-sm font-mono bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+            className='w-full h-full resize-none border border-slate-300 dark:border-slate-600 rounded-lg p-3 text-sm font-mono bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-slate-400 dark:placeholder:text-slate-500'
             placeholder={getPlaceholder()}
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -172,8 +174,8 @@ const Base64Converter: React.FC = () => {
         {/* 输出区域 */}
         <div className='flex-1 flex flex-col p-4'>
           <div className='mb-2 flex items-center justify-between'>
-            <div className='text-sm text-gray-600 dark:text-gray-400'>
-              输出长度: {output.length}
+            <div className='text-sm text-slate-600 dark:text-slate-400 font-medium'>
+              输出长度: <span className='font-mono text-primary-600 dark:text-primary-400'>{output.length}</span>
             </div>
             <Button
               variant='primary'
@@ -185,7 +187,7 @@ const Base64Converter: React.FC = () => {
             </Button>
           </div>
           <textarea
-            className='w-full h-full resize-none border border-gray-300 dark:border-gray-600 rounded-md p-3 text-sm font-mono bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none'
+            className='w-full h-full resize-none border border-slate-300 dark:border-slate-600 rounded-lg p-3 text-sm font-mono bg-slate-50 dark:bg-slate-700/50 text-slate-900 dark:text-slate-100 focus:outline-none transition-colors duration-200 placeholder:text-slate-400 dark:placeholder:text-slate-500'
             placeholder={getOutputPlaceholder()}
             value={output}
             readOnly

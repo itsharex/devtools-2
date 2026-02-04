@@ -228,16 +228,16 @@ const FormatConverter: React.FC = () => {
       title='格式转换器'
       description='支持 JSON、YAML、TOML 之间的双向转换'>
       {/* 格式选择器 */}
-      <div className='flex-shrink-0 p-4 bg-gray-50 dark:bg-gray-800 border-b dark:border-gray-700 mb-6'>
+      <div className='flex-shrink-0 p-4 bg-slate-50 dark:bg-slate-800 border-b dark:border-slate-700 mb-6'>
         <div className='flex items-center space-x-4'>
           <div className='flex items-center space-x-2'>
-            <span className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+            <span className='text-sm font-medium text-slate-700 dark:text-slate-300'>
               输入格式:
             </span>
             <select
               value={inputFormat}
               onChange={(e) => setInputFormat(e.target.value as any)}
-              className='px-3 py-1 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-sm'>
+              className='px-3 py-1 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 text-sm'>
               <option value='json'>JSON</option>
               <option value='yaml'>YAML</option>
               <option value='toml'>TOML</option>
@@ -245,7 +245,7 @@ const FormatConverter: React.FC = () => {
           </div>
 
           <div className='flex items-center space-x-2'>
-            <span className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+            <span className='text-sm font-medium text-slate-700 dark:text-slate-300'>
               输出格式:
             </span>
             <select
@@ -254,7 +254,7 @@ const FormatConverter: React.FC = () => {
                 setOutputFormat(e.target.value as any)
                 // 转换逻辑现在由useEffect处理
               }}
-              className='px-3 py-1 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-sm'>
+              className='px-3 py-1 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 text-sm'>
               <option value='json'>JSON</option>
               <option value='yaml'>YAML</option>
               <option value='toml'>TOML</option>
@@ -273,23 +273,23 @@ const FormatConverter: React.FC = () => {
       <div className='grid grid-cols-1 md:grid-cols-2 gap-6 flex-1'>
         {/* 左侧输入区域 */}
         <div className='flex flex-col'>
-          <div className='p-2 bg-gray-100 dark:bg-gray-700 border-b dark:border-gray-600 flex items-center justify-between'>
-            <h2 className='font-semibold text-gray-800 dark:text-gray-200'>
+          <div className='p-2 bg-slate-100 dark:bg-slate-700 border-b dark:border-slate-600 flex items-center justify-between'>
+            <h2 className='font-semibold text-slate-800 dark:text-slate-200'>
               输入内容
             </h2>
             <div className='flex items-center space-x-2'>
-              <span className='text-sm text-gray-600 dark:text-gray-400'>
+              <span className='text-sm text-slate-600 dark:text-slate-400'>
                 长度: {input.length}
               </span>
               <button
                 onClick={handleLoadExample}
-                className='px-3 py-1 text-sm bg-blue-500 text-white rounded-md hover:bg-blue-600'>
+                className='px-3 py-1 text-sm bg-blue-500 text-white rounded-lg hover:bg-blue-600'>
                 示例
               </button>
               <button
                 onClick={handleClearInput}
                 disabled={!input}
-                className='px-3 py-1 text-sm bg-gray-500 text-white rounded-md hover:bg-gray-600 disabled:opacity-50'>
+                className='px-3 py-1 text-sm bg-slate-500 text-white rounded-lg hover:bg-gray-600 disabled:opacity-50'>
                 清空
               </button>
             </div>
@@ -310,18 +310,18 @@ const FormatConverter: React.FC = () => {
 
         {/* 右侧输出区域 */}
         <div className='flex flex-col'>
-          <div className='p-2 bg-gray-100 dark:bg-gray-700 border-b dark:border-gray-600 flex items-center justify-between'>
-            <h2 className='font-semibold text-gray-800 dark:text-gray-200'>
+          <div className='p-2 bg-slate-100 dark:bg-slate-700 border-b dark:border-slate-600 flex items-center justify-between'>
+            <h2 className='font-semibold text-slate-800 dark:text-slate-200'>
               转换结果
             </h2>
             <div className='flex items-center space-x-2'>
-              <span className='text-sm text-gray-600 dark:text-gray-400'>
+              <span className='text-sm text-slate-600 dark:text-slate-400'>
                 长度: {output.length}
               </span>
               <button
                 onClick={handleCopyOutput}
                 disabled={!output || !!error}
-                className='px-3 py-1 text-sm bg-green-500 text-white rounded-md hover:bg-green-600 disabled:opacity-50'>
+                className='px-3 py-1 text-sm bg-green-500 text-white rounded-lg hover:bg-green-600 disabled:opacity-50'>
                 复制结果
               </button>
             </div>

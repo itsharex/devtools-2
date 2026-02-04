@@ -141,13 +141,13 @@ const DnsResolver: React.FC = () => {
       subtitle='正向解析和反向 DNS 查询，支持 A 记录和 AAAA 记录'>
       <div className='flex flex-col h-full'>
         {/* 选项卡 */}
-        <div className='border-b border-gray-200 dark:border-gray-700 mb-4'>
+        <div className='border-b border-slate-200 dark:border-slate-700 mb-4'>
           <div className='flex space-x-4'>
             <button
               className={`px-4 py-2 font-medium ${
                 activeTab === 'forward'
                   ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400'
-                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
               }`}
               onClick={() => setActiveTab('forward')}>
               正向解析
@@ -156,7 +156,7 @@ const DnsResolver: React.FC = () => {
               className={`px-4 py-2 font-medium ${
                 activeTab === 'reverse'
                   ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400'
-                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
               }`}
               onClick={() => setActiveTab('reverse')}>
               反向解析
@@ -169,18 +169,18 @@ const DnsResolver: React.FC = () => {
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 h-full'>
               {/* 左侧输入区 */}
               <div className='space-y-4'>
-                <div className='bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4 h-full'>
-                  <h3 className='text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4'>
+                <div className='bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4 h-full'>
+                  <h3 className='text-lg font-semibold text-slate-800 dark:text-slate-200 mb-4'>
                     查询配置
                   </h3>
 
                   <div className='space-y-4'>
                     <div>
-                      <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2'>
+                      <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2'>
                         DNS 服务器
                       </label>
                       <select
-                        className='w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+                        className='w-full p-2 border border-slate-300 rounded-lg shadow-sm focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
                         value={selectedDnsServer}
                         onChange={(e) => setSelectedDnsServer(e.target.value)}>
                         <option value=''>选择预设 DNS 服务器</option>
@@ -193,12 +193,12 @@ const DnsResolver: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2'>
+                      <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2'>
                         或自定义 DNS 服务器
                       </label>
                       <input
                         type='text'
-                        className='w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+                        className='w-full p-2 border border-slate-300 rounded-lg shadow-sm focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
                         placeholder='例如: 8.8.8.8'
                         value={customDnsServer}
                         onChange={(e) => setCustomDnsServer(e.target.value)}
@@ -206,11 +206,11 @@ const DnsResolver: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2'>
+                      <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2'>
                         记录类型
                       </label>
                       <select
-                        className='w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+                        className='w-full p-2 border border-slate-300 rounded-lg shadow-sm focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
                         value={recordType}
                         onChange={(e) => setRecordType(e.target.value as any)}>
                         <option value='ALL'>全部记录</option>
@@ -225,12 +225,12 @@ const DnsResolver: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2'>
+                      <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2'>
                         域名
                       </label>
                       <input
                         type='text'
-                        className='w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+                        className='w-full p-2 border border-slate-300 rounded-lg shadow-sm focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
                         placeholder='例如: www.example.com'
                         value={domain}
                         onChange={(e) => setDomain(e.target.value)}
@@ -262,14 +262,14 @@ const DnsResolver: React.FC = () => {
 
               {/* 右侧结果区 */}
               <div className='space-y-4'>
-                <div className='bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4 h-full'>
-                  <h3 className='text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4'>
+                <div className='bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4 h-full'>
+                  <h3 className='text-lg font-semibold text-slate-800 dark:text-slate-200 mb-4'>
                     查询结果
                   </h3>
 
                   <div className='flex-1 overflow-auto'>
                     {dnsError && (
-                      <div className='p-4 mb-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md'>
+                      <div className='p-4 mb-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg'>
                         <p className='text-red-700 dark:text-red-400'>
                           {dnsError}
                         </p>
@@ -279,35 +279,35 @@ const DnsResolver: React.FC = () => {
                     {dnsResponse && (
                       <div className='space-y-4'>
                         <div>
-                          <p className='text-sm text-gray-600 dark:text-gray-400 mb-3'>
+                          <p className='text-sm text-slate-600 dark:text-slate-400 mb-3'>
                             域名: {dnsResponse.domain}
                           </p>
 
                           {dnsResponse.records.length > 0 ? (
                             <div className='space-y-2'>
-                              <h4 className='font-medium text-gray-700 dark:text-gray-300'>
+                              <h4 className='font-medium text-slate-700 dark:text-slate-300'>
                                 DNS 记录:
                               </h4>
                               <div className='overflow-x-auto'>
                                 <table className='min-w-full divide-y divide-gray-200 dark:divide-gray-700'>
-                                  <thead className='bg-gray-100 dark:bg-gray-800'>
+                                  <thead className='bg-slate-100 dark:bg-slate-800'>
                                     <tr>
-                                      <th className='px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider'>
+                                      <th className='px-4 py-2 text-left text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider'>
                                         类型
                                       </th>
-                                      <th className='px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider'>
+                                      <th className='px-4 py-2 text-left text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider'>
                                         值
                                       </th>
                                     </tr>
                                   </thead>
-                                  <tbody className='bg-white dark:bg-gray-700 divide-y divide-gray-200 dark:divide-gray-600'>
+                                  <tbody className='bg-white dark:bg-slate-700 divide-y divide-gray-200 dark:divide-gray-600'>
                                     {dnsResponse.records.map(
                                       (record: any, idx: number) => (
                                         <tr key={idx}>
-                                          <td className='px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-100'>
+                                          <td className='px-4 py-2 whitespace-nowrap text-sm font-medium text-slate-900 dark:text-slate-100'>
                                             {record.recordType}
                                           </td>
-                                          <td className='px-4 py-2 text-sm text-gray-500 dark:text-gray-400 font-mono'>
+                                          <td className='px-4 py-2 text-sm text-slate-500 dark:text-slate-400 font-mono'>
                                             {record.value}
                                           </td>
                                         </tr>
@@ -318,68 +318,68 @@ const DnsResolver: React.FC = () => {
                               </div>
                             </div>
                           ) : (
-                            <p className='text-gray-500 dark:text-gray-400'>
+                            <p className='text-slate-500 dark:text-slate-400'>
                               未找到记录
                             </p>
                           )}
                         </div>
 
                         {dnsResponse.ipInfo && (
-                          <div className='mt-4 pt-4 border-t border-gray-200 dark:border-gray-600'>
-                            <h4 className='font-medium text-gray-700 dark:text-gray-300 mb-3'>
+                          <div className='mt-4 pt-4 border-t border-slate-200 dark:border-slate-600'>
+                            <h4 className='font-medium text-slate-700 dark:text-slate-300 mb-3'>
                               IP 地理位置信息
                             </h4>
                             <div className='grid grid-cols-2 gap-4'>
                               <div>
-                                <p className='text-sm text-gray-600 dark:text-gray-400'>
+                                <p className='text-sm text-slate-600 dark:text-slate-400'>
                                   IP 地址
                                 </p>
-                                <p className='font-mono text-gray-800 dark:text-gray-200'>
+                                <p className='font-mono text-slate-800 dark:text-slate-200'>
                                   {dnsResponse.ipInfo.ip}
                                 </p>
                               </div>
                               <div>
-                                <p className='text-sm text-gray-600 dark:text-gray-400'>
+                                <p className='text-sm text-slate-600 dark:text-slate-400'>
                                   国家
                                 </p>
-                                <p className='text-gray-800 dark:text-gray-200'>
+                                <p className='text-slate-800 dark:text-slate-200'>
                                   {dnsResponse.ipInfo.country || '-'}
                                 </p>
                               </div>
                               <div>
-                                <p className='text-sm text-gray-600 dark:text-gray-400'>
+                                <p className='text-sm text-slate-600 dark:text-slate-400'>
                                   城市
                                 </p>
-                                <p className='text-gray-800 dark:text-gray-200'>
+                                <p className='text-slate-800 dark:text-slate-200'>
                                   {dnsResponse.ipInfo.city || '-'}
                                 </p>
                               </div>
                               <div>
-                                <p className='text-sm text-gray-600 dark:text-gray-400'>
+                                <p className='text-sm text-slate-600 dark:text-slate-400'>
                                   运营商
                                 </p>
-                                <p className='text-gray-800 dark:text-gray-200'>
+                                <p className='text-slate-800 dark:text-slate-200'>
                                   {dnsResponse.ipInfo.org || '-'}
                                 </p>
                               </div>
                               <div>
-                                <p className='text-sm text-gray-600 dark:text-gray-400'>
+                                <p className='text-sm text-slate-600 dark:text-slate-400'>
                                   地区
                                 </p>
-                                <p className='text-gray-800 dark:text-gray-200'>
+                                <p className='text-slate-800 dark:text-slate-200'>
                                   {dnsResponse.ipInfo.region || '-'}
                                 </p>
                               </div>
                               <div>
-                                <p className='text-sm text-gray-600 dark:text-gray-400'>
+                                <p className='text-sm text-slate-600 dark:text-slate-400'>
                                   时区
                                 </p>
-                                <p className='text-gray-800 dark:text-gray-200'>
+                                <p className='text-slate-800 dark:text-slate-200'>
                                   {dnsResponse.ipInfo.timezone || '-'}
                                 </p>
                               </div>
                             </div>
-                            <p className='text-xs text-gray-500 dark:text-gray-400 mt-2'>
+                            <p className='text-xs text-slate-500 dark:text-slate-400 mt-2'>
                               数据来源: {dnsResponse.ipInfo.source}
                             </p>
                           </div>
@@ -396,19 +396,19 @@ const DnsResolver: React.FC = () => {
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 h-full'>
               {/* 左侧输入区 */}
               <div className='space-y-4'>
-                <div className='bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4 h-full'>
-                  <h3 className='text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4'>
+                <div className='bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4 h-full'>
+                  <h3 className='text-lg font-semibold text-slate-800 dark:text-slate-200 mb-4'>
                     反向解析配置
                   </h3>
 
                   <div className='space-y-4'>
                     <div>
-                      <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2'>
+                      <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2'>
                         单个 IP 反向解析
                       </label>
                       <input
                         type='text'
-                        className='w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+                        className='w-full p-2 border border-slate-300 rounded-lg shadow-sm focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
                         placeholder='例如: 8.8.8.8'
                         value={reverseIp}
                         onChange={(e) => setReverseIp(e.target.value)}
@@ -435,12 +435,12 @@ const DnsResolver: React.FC = () => {
                       </Button>
                     </div>
 
-                    <div className='border-t border-gray-200 dark:border-gray-600 pt-4'>
-                      <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2'>
+                    <div className='border-t border-slate-200 dark:border-slate-600 pt-4'>
+                      <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2'>
                         批量反向解析 (每行一个 IP)
                       </label>
                       <textarea
-                        className='w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+                        className='w-full p-2 border border-slate-300 rounded-lg shadow-sm focus:ring-primary-500 focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:text-white'
                         rows={6}
                         placeholder='输入多个 IP 地址，每行一个'
                         value={batchIps}
@@ -474,14 +474,14 @@ const DnsResolver: React.FC = () => {
 
               {/* 右侧结果区 */}
               <div className='space-y-4'>
-                <div className='bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4 h-full'>
-                  <h3 className='text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4'>
+                <div className='bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4 h-full'>
+                  <h3 className='text-lg font-semibold text-slate-800 dark:text-slate-200 mb-4'>
                     查询结果
                   </h3>
 
                   <div className='flex-1 overflow-auto'>
                     {reverseError && (
-                      <div className='p-4 mb-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md'>
+                      <div className='p-4 mb-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg'>
                         <p className='text-red-700 dark:text-red-400'>
                           {reverseError}
                         </p>
@@ -490,15 +490,15 @@ const DnsResolver: React.FC = () => {
 
                     {reverseResponse && (
                       <div className='mb-4'>
-                        <h4 className='font-medium text-gray-700 dark:text-gray-300 mb-2'>
+                        <h4 className='font-medium text-slate-700 dark:text-slate-300 mb-2'>
                           单个 IP 查询结果
                         </h4>
-                        <p className='text-sm text-gray-600 dark:text-gray-400 mb-2'>
+                        <p className='text-sm text-slate-600 dark:text-slate-400 mb-2'>
                           IP 地址: {reverseResponse.ip}
                         </p>
                         {reverseResponse.domains.length > 0 ? (
                           <div>
-                            <p className='text-sm font-medium text-gray-700 dark:text-gray-300 mb-2'>
+                            <p className='text-sm font-medium text-slate-700 dark:text-slate-300 mb-2'>
                               对应域名:
                             </p>
                             <ul className='list-disc list-inside space-y-1'>
@@ -506,7 +506,7 @@ const DnsResolver: React.FC = () => {
                                 (domain: string, idx: number) => (
                                   <li
                                     key={idx}
-                                    className='text-gray-800 dark:text-gray-200 font-mono'>
+                                    className='text-slate-800 dark:text-slate-200 font-mono'>
                                     {domain}
                                   </li>
                                 ),
@@ -514,7 +514,7 @@ const DnsResolver: React.FC = () => {
                             </ul>
                           </div>
                         ) : (
-                          <p className='text-gray-500 dark:text-gray-400'>
+                          <p className='text-slate-500 dark:text-slate-400'>
                             未找到对应的域名记录
                           </p>
                         )}
@@ -523,7 +523,7 @@ const DnsResolver: React.FC = () => {
 
                     {batchResponse && (
                       <div>
-                        <h4 className='font-medium text-gray-700 dark:text-gray-300 mb-2'>
+                        <h4 className='font-medium text-slate-700 dark:text-slate-300 mb-2'>
                           批量查询结果
                         </h4>
                         {batchResponse.results.length > 0 ? (
@@ -532,8 +532,8 @@ const DnsResolver: React.FC = () => {
                               (result: any, idx: number) => (
                                 <div
                                   key={idx}
-                                  className='border border-gray-200 dark:border-gray-700 rounded-md p-3'>
-                                  <p className='font-medium text-gray-700 dark:text-gray-300 mb-2'>
+                                  className='border border-slate-200 dark:border-slate-700 rounded-lg p-3'>
+                                  <p className='font-medium text-slate-700 dark:text-slate-300 mb-2'>
                                     {result.ip}
                                   </p>
                                   {result.domains.length > 0 ? (
@@ -542,14 +542,14 @@ const DnsResolver: React.FC = () => {
                                         (domain: string, domainIdx: number) => (
                                           <li
                                             key={domainIdx}
-                                            className='text-sm text-gray-600 dark:text-gray-400 font-mono'>
+                                            className='text-sm text-slate-600 dark:text-slate-400 font-mono'>
                                             {domain}
                                           </li>
                                         ),
                                       )}
                                     </ul>
                                   ) : (
-                                    <p className='text-sm text-gray-500 dark:text-gray-400'>
+                                    <p className='text-sm text-slate-500 dark:text-slate-400'>
                                       未找到对应的域名记录
                                     </p>
                                   )}
@@ -558,7 +558,7 @@ const DnsResolver: React.FC = () => {
                             )}
                           </div>
                         ) : (
-                          <p className='text-gray-500 dark:text-gray-400'>
+                          <p className='text-slate-500 dark:text-slate-400'>
                             未找到查询结果
                           </p>
                         )}

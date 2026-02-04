@@ -321,26 +321,26 @@ const WhoisLookup: React.FC = () => {
       title='域名 Whois 查询（多源）'
       description='查询域名的 Whois 信息，支持多个数据源'
       padding={false}>
-      <div className='space-y-4 text-gray-900 dark:text-gray-100 p-4'>
+      <div className='space-y-4 text-slate-900 dark:text-slate-100 p-4'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
           <div>
-            <label className='block text-sm text-gray-600 dark:text-gray-300 mb-1'>
+            <label className='block text-sm text-slate-600 dark:text-slate-300 mb-1'>
               批量域名（每行一个或用逗号/空格分隔）
             </label>
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder={'例如:\nexample.com\nopenai.com\ncloudflare.net'}
-              className='w-full h-40 p-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm text-gray-900 dark:text-gray-100'
+              className='w-full h-40 p-2 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm text-slate-900 dark:text-slate-100'
             />
             <div className='mt-2 flex items-center gap-2'>
-              <span className='text-sm text-gray-700 dark:text-gray-200'>
+              <span className='text-sm text-slate-700 dark:text-slate-200'>
                 查询源：
               </span>
               <select
                 value={sourceMode}
                 onChange={(e) => setSourceMode(e.target.value as any)}
-                className='px-2 py-1 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm text-gray-900 dark:text-gray-100'>
+                className='px-2 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm text-slate-900 dark:text-slate-100'>
                 <option value='auto'>自动（verisign → cndns → hichina）</option>
                 <option value='whois_verisign'>whois.verisign-grs.com</option>
                 <option value='whois_cndns'>grs-whois.cndns.com</option>
@@ -368,17 +368,17 @@ const WhoisLookup: React.FC = () => {
               </button>
               <button
                 onClick={clearHistory}
-                className='px-3 py-2 rounded bg-gray-300 dark:bg-gray-600 text-sm'>
+                className='px-3 py-2 rounded bg-slate-300 dark:bg-gray-600 text-sm'>
                 清空历史
               </button>
             </div>
-            <div className='mt-2 text-xs text-gray-600 dark:text-gray-400'>
+            <div className='mt-2 text-xs text-slate-600 dark:text-slate-400'>
               频率限制：WHOIS 每 700ms（按服务器区分）。缓存有效期 24
               小时。失败不记录历史。
             </div>
           </div>
-          <div className='p-3 rounded border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800'>
-            <div className='text-sm text-gray-800 dark:text-gray-200'>
+          <div className='p-3 rounded border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800'>
+            <div className='text-sm text-slate-800 dark:text-slate-200'>
               <div>总数：{stats.total}</div>
               <div>已完成：{stats.completed}</div>
               <div>
@@ -394,9 +394,9 @@ const WhoisLookup: React.FC = () => {
         </div>
 
         <div className='overflow-x-auto'>
-          <table className='min-w-full text-sm text-gray-800 dark:text-gray-200'>
+          <table className='min-w-full text-sm text-slate-800 dark:text-slate-200'>
             <thead>
-              <tr className='text-left border-b border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300'>
+              <tr className='text-left border-b border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300'>
                 <th className='p-2'>选择</th>
                 <th className='p-2'>域名</th>
                 <th className='p-2'>来源</th>
@@ -414,7 +414,7 @@ const WhoisLookup: React.FC = () => {
               {Object.values(results).map((r) => (
                 <tr
                   key={r.domain}
-                  className='border-b border-gray-100 dark:border-gray-700'>
+                  className='border-b border-gray-100 dark:border-slate-700'>
                   <td className='p-2'>
                     <input
                       type='checkbox'
@@ -422,7 +422,7 @@ const WhoisLookup: React.FC = () => {
                       onChange={() => toggleSelect(r.domain)}
                     />
                   </td>
-                  <td className='p-2 font-medium text-gray-900 dark:text-gray-100'>
+                  <td className='p-2 font-medium text-slate-900 dark:text-slate-100'>
                     {r.domain}
                   </td>
                   <td className='p-2'>{r.best?.source ?? '—'}</td>
@@ -459,9 +459,9 @@ const WhoisLookup: React.FC = () => {
               结果对比（{selectedResults.length}）
             </h3>
             <div className='overflow-x-auto'>
-              <table className='min-w-full text-sm text-gray-800 dark:text-gray-200'>
+              <table className='min-w-full text-sm text-slate-800 dark:text-slate-200'>
                 <thead>
-                  <tr className='text-left border-b border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300'>
+                  <tr className='text-left border-b border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300'>
                     <th className='p-2'>字段</th>
                     {selectedResults.map((r) => (
                       <th key={r.domain} className='p-2'>
@@ -483,8 +483,8 @@ const WhoisLookup: React.FC = () => {
                   ].map((field) => (
                     <tr
                       key={field}
-                      className='border-b border-gray-100 dark:border-gray-700'>
-                      <td className='p-2 font-medium text-gray-900 dark:text-gray-100'>
+                      className='border-b border-gray-100 dark:border-slate-700'>
+                      <td className='p-2 font-medium text-slate-900 dark:text-slate-100'>
                         {field}
                       </td>
                       {selectedResults.map((r) => {
@@ -515,15 +515,15 @@ const WhoisLookup: React.FC = () => {
               .map((h, idx) => (
                 <div
                   key={idx}
-                  className='p-2 rounded border border-gray-200 dark:border-gray-700'>
-                  <div className='text-sm font-medium text-gray-900 dark:text-gray-100'>
+                  className='p-2 rounded border border-slate-200 dark:border-slate-700'>
+                  <div className='text-sm font-medium text-slate-900 dark:text-slate-100'>
                     {h.domain}
                   </div>
-                  <div className='text-xs text-gray-600 dark:text-gray-400'>
+                  <div className='text-xs text-slate-600 dark:text-slate-400'>
                     来源：{h.best?.source ?? '—'}；注册商：
                     {h.best?.registrar ?? '—'}
                   </div>
-                  <div className='text-xs text-gray-600 dark:text-gray-400'>
+                  <div className='text-xs text-slate-600 dark:text-slate-400'>
                     注册：{h.best?.created ?? '—'}；过期：
                     {h.best?.expires ?? '—'}
                   </div>

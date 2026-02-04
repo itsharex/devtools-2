@@ -240,11 +240,11 @@ const JwtDecode: React.FC = () => {
           {/* JWT Token输入区域 */}
           <div className='flex-shrink-0'>
             <div className='flex items-center justify-between mb-2'>
-              <label className='text-sm font-medium text-gray-700 dark:text-gray-200'>
+              <label className='text-sm font-medium text-slate-700 dark:text-slate-200'>
                 JWT Token
               </label>
               <div className='flex items-center space-x-3'>
-                <div className='text-sm text-gray-600 dark:text-gray-400'>
+                <div className='text-sm text-slate-600 dark:text-slate-400'>
                   输入长度: {input.length}
                 </div>
                 <Button
@@ -320,7 +320,7 @@ const JwtDecode: React.FC = () => {
                         type='text'
                         value={secretKey}
                         onChange={(e) => setSecretKey(e.target.value)}
-                        className='w-full p-3 border border-yellow-300 dark:border-yellow-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-700 dark:text-white font-mono'
+                        className='w-full p-3 border border-yellow-300 dark:border-yellow-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-slate-700 dark:text-white font-mono'
                         placeholder='请输入用于签名的Secret Key...'
                       />
                       <p className='text-xs text-yellow-700 dark:text-yellow-300 mt-1'>
@@ -462,7 +462,7 @@ const JwtDecode: React.FC = () => {
               {/* Header */}
               <div className='flex flex-col'>
                 <div className='flex items-center justify-between mb-2'>
-                  <h3 className='text-lg font-semibold text-gray-800 dark:text-white'>
+                  <h3 className='text-lg font-semibold text-slate-800 dark:text-white'>
                     Header
                   </h3>
                   {header && (
@@ -499,7 +499,7 @@ const JwtDecode: React.FC = () => {
               {/* Payload */}
               <div className='flex flex-col'>
                 <div className='flex items-center justify-between mb-2'>
-                  <h3 className='text-lg font-semibold text-gray-800 dark:text-white'>
+                  <h3 className='text-lg font-semibold text-slate-800 dark:text-white'>
                     Payload
                   </h3>
                   {payload && (
@@ -537,7 +537,7 @@ const JwtDecode: React.FC = () => {
             {/* Signature - 单独一行 */}
             <div className='flex-shrink-0'>
               <div className='flex items-center justify-between mb-2'>
-                <h3 className='text-lg font-semibold text-gray-800 dark:text-white'>
+                <h3 className='text-lg font-semibold text-slate-800 dark:text-white'>
                   Signature
                 </h3>
                 {signature && (

@@ -141,9 +141,9 @@ const PasswordGenerator: React.FC = () => {
     <ToolLayout title='密码生成器' subtitle='生成安全的随机密码'>
       <div className='flex flex-col h-full space-y-6 overflow-y-auto'>
         {/* 密码显示区域 */}
-        <div className='bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-600 p-4'>
+        <div className='bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600 p-4'>
           <div className='flex items-center justify-between mb-2'>
-            <span className='text-sm text-gray-600 dark:text-gray-400'>
+            <span className='text-sm text-slate-600 dark:text-slate-400'>
               生成的密码
             </span>
             <div className='flex items-center space-x-2'>
@@ -173,14 +173,14 @@ const PasswordGenerator: React.FC = () => {
               </Button>
             </div>
           </div>
-          <div className='bg-gray-50 dark:bg-gray-700 rounded p-3 font-mono text-lg text-center break-all text-gray-900 dark:text-gray-100'>
+          <div className='bg-slate-50 dark:bg-slate-700 rounded p-3 font-mono text-lg text-center break-all text-slate-900 dark:text-slate-100'>
             {password || '点击生成按钮创建密码'}
           </div>
         </div>
 
         {/* 密码长度设置 */}
-        <div className='bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-600 p-4'>
-          <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2'>
+        <div className='bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600 p-4'>
+          <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2'>
             密码长度: {options.length}
           </label>
           <input
@@ -189,17 +189,17 @@ const PasswordGenerator: React.FC = () => {
             max='64'
             value={options.length}
             onChange={(e) => updateOption('length', parseInt(e.target.value))}
-            className='w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700'
+            className='w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer dark:bg-slate-700'
           />
-          <div className='flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1'>
+          <div className='flex justify-between text-xs text-slate-500 dark:text-slate-400 mt-1'>
             <span>4</span>
             <span>64</span>
           </div>
         </div>
 
         {/* 字符类型控制 */}
-        <div className='bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-600 p-4'>
-          <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3'>
+        <div className='bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600 p-4'>
+          <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3'>
             字符类型控制
           </label>
           <div className='flex flex-wrap gap-4'>
@@ -237,11 +237,11 @@ const PasswordGenerator: React.FC = () => {
                         e.target.checked,
                       )
                     }
-                    className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
+                    className='w-4 h-4 text-blue-600 bg-slate-100 border-slate-300 rounded focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-slate-700 dark:border-slate-600'
                   />
                   <label
                     htmlFor={typeKey}
-                    className='text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap'>
+                    className='text-sm text-slate-700 dark:text-slate-300 whitespace-nowrap'>
                     {typeLabel}
                   </label>
                 </div>
@@ -252,14 +252,14 @@ const PasswordGenerator: React.FC = () => {
 
         {/* 特殊字符自定义选择 */}
         {options.includeSymbols && (
-          <div className='mt-4 pt-4 border-t border-gray-200 dark:border-gray-600'>
-            <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2'>
+          <div className='mt-4 pt-4 border-t border-slate-200 dark:border-slate-600'>
+            <label className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2'>
               自定义特殊字符
             </label>
 
             {/* 预定义字符组快速选择 */}
             <div className='mb-3'>
-              <label className='block text-xs text-gray-600 dark:text-gray-400 mb-2'>
+              <label className='block text-xs text-slate-600 dark:text-slate-400 mb-2'>
                 快速选择：
               </label>
               <div className='flex flex-wrap gap-2'>
@@ -268,7 +268,7 @@ const PasswordGenerator: React.FC = () => {
                     key={index}
                     type='button'
                     onClick={() => updateOption('customSymbols', group.value)}
-                    className='px-2 py-1 text-xs bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 rounded border border-gray-300 dark:border-gray-500 transition-colors text-gray-900 dark:text-gray-100'>
+                    className='px-2 py-1 text-xs bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-gray-600 rounded border border-slate-300 dark:border-gray-500 transition-colors text-slate-900 dark:text-slate-100'>
                     {group.name}
                   </button>
                 ))}
@@ -277,7 +277,7 @@ const PasswordGenerator: React.FC = () => {
 
             {/* 自定义字符输入 */}
             <div>
-              <label className='block text-xs text-gray-600 dark:text-gray-400 mb-1'>
+              <label className='block text-xs text-slate-600 dark:text-slate-400 mb-1'>
                 自定义字符（直接输入）：
               </label>
               <input
@@ -285,9 +285,9 @@ const PasswordGenerator: React.FC = () => {
                 value={options.customSymbols}
                 onChange={(e) => updateOption('customSymbols', e.target.value)}
                 placeholder='输入您想要使用的特殊字符...'
-                className='w-full px-3 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                className='w-full px-3 py-2 text-sm border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-500'
               />
-              <div className='mt-1 text-xs text-gray-500 dark:text-gray-400'>
+              <div className='mt-1 text-xs text-slate-500 dark:text-slate-400'>
                 当前字符数: {options.customSymbols.length}
               </div>
             </div>

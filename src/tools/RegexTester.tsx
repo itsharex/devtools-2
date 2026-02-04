@@ -222,28 +222,28 @@ export const RegexTester: React.FC = () => {
       <div className='space-y-4 h-full flex flex-col'>
         {testResult.matches.length > 0 && (
           <div className='space-y-2 h-full flex flex-col'>
-            <h4 className='font-medium text-gray-700 dark:text-gray-300'>
+            <h4 className='font-medium text-slate-700 dark:text-slate-300'>
               匹配详情:
             </h4>
-            <div className='h-full overflow-y-auto border rounded-lg bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600'>
+            <div className='h-full overflow-y-auto border rounded-lg bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-600'>
               {testResult.matches.map((match, index) => (
                 <div
                   key={index}
-                  className='p-3 border-b last:border-b-0 border-gray-100 dark:border-gray-700'>
+                  className='p-3 border-b last:border-b-0 border-gray-100 dark:border-slate-700'>
                   <div className='grid grid-cols-2 gap-2 text-sm'>
                     <div>
-                      <span className='font-medium text-gray-600 dark:text-gray-400'>
+                      <span className='font-medium text-slate-600 dark:text-slate-400'>
                         匹配 {index + 1}:
                       </span>
-                      <span className='ml-2 font-mono text-gray-900 dark:text-gray-100'>
+                      <span className='ml-2 font-mono text-slate-900 dark:text-slate-100'>
                         {match.full_match}
                       </span>
                     </div>
                     <div>
-                      <span className='font-medium text-gray-600 dark:text-gray-400'>
+                      <span className='font-medium text-slate-600 dark:text-slate-400'>
                         位置:
                       </span>
-                      <span className='ml-2 text-gray-900 dark:text-gray-100'>
+                      <span className='ml-2 text-slate-900 dark:text-slate-100'>
                         {match.start}-{match.end}
                       </span>
                     </div>
@@ -251,16 +251,16 @@ export const RegexTester: React.FC = () => {
 
                   {match.groups.length > 0 && (
                     <div className='mt-2'>
-                      <span className='font-medium text-gray-600 dark:text-gray-400'>
+                      <span className='font-medium text-slate-600 dark:text-slate-400'>
                         捕获组:
                       </span>
                       <div className='ml-4 space-y-1'>
                         {match.groups.map((group, groupIndex) => (
                           <div key={groupIndex} className='text-sm'>
-                            <span className='text-gray-500 dark:text-gray-400'>
+                            <span className='text-slate-500 dark:text-slate-400'>
                               组 {groupIndex + 1}:
                             </span>
-                            <span className='ml-2 font-mono text-gray-900 dark:text-gray-100'>
+                            <span className='ml-2 font-mono text-slate-900 dark:text-slate-100'>
                               {group || '(未匹配)'}
                             </span>
                           </div>
@@ -271,17 +271,17 @@ export const RegexTester: React.FC = () => {
 
                   {Object.keys(match.named_groups).length > 0 && (
                     <div className='mt-2'>
-                      <span className='font-medium text-gray-600 dark:text-gray-400'>
+                      <span className='font-medium text-slate-600 dark:text-slate-400'>
                         命名组:
                       </span>
                       <div className='ml-4 space-y-1'>
                         {Object.entries(match.named_groups).map(
                           ([name, value]) => (
                             <div key={name} className='text-sm'>
-                              <span className='text-gray-500 dark:text-gray-400'>
+                              <span className='text-slate-500 dark:text-slate-400'>
                                 {name}:
                               </span>
-                              <span className='ml-2 font-mono text-gray-900 dark:text-gray-100'>
+                              <span className='ml-2 font-mono text-slate-900 dark:text-slate-100'>
                                 {value || '(未匹配)'}
                               </span>
                             </div>
@@ -297,8 +297,8 @@ export const RegexTester: React.FC = () => {
         )}
 
         {testResult.matches.length === 0 && (
-          <div className='p-4 border rounded-lg bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-600'>
-            <p className='text-gray-600 dark:text-gray-400 text-center'>
+          <div className='p-4 border rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600'>
+            <p className='text-slate-600 dark:text-slate-400 text-center'>
               没有找到匹配项
             </p>
           </div>
@@ -335,10 +335,10 @@ export const RegexTester: React.FC = () => {
 
         {replaceResult.result && (
           <div className='space-y-2'>
-            <h4 className='font-medium text-gray-700 dark:text-gray-300'>
+            <h4 className='font-medium text-slate-700 dark:text-slate-300'>
               替换结果:
             </h4>
-            <div className='p-3 border rounded-lg bg-gray-50 dark:bg-gray-800 border-gray-300 dark:border-gray-600 font-mono text-sm whitespace-pre-wrap text-gray-900 dark:text-gray-100'>
+            <div className='p-3 border rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-300 dark:border-slate-600 font-mono text-sm whitespace-pre-wrap text-slate-900 dark:text-slate-100'>
               {replaceResult.result}
             </div>
           </div>
@@ -351,17 +351,17 @@ export const RegexTester: React.FC = () => {
     <div className='space-y-6 h-full flex flex-col'>
       {/* 配置与控制区域 */}
       <div className='flex-shrink-0'>
-        <h3 className='text-lg font-medium text-gray-700 dark:text-gray-300 mb-4'>
+        <h3 className='text-lg font-medium text-slate-700 dark:text-slate-300 mb-4'>
           配置与控制
         </h3>
-        <div className='space-y-4 p-4 border rounded-lg bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-600'>
+        <div className='space-y-4 p-4 border rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600'>
           {/* 引擎选择 */}
           <div className='space-y-2'>
-            <label className='block text-sm font-medium text-gray-700 dark:text-gray-300'>
+            <label className='block text-sm font-medium text-slate-700 dark:text-slate-300'>
               正则引擎
             </label>
             <div className='grid grid-cols-3 gap-2'>
-              <label className='flex items-center text-gray-700 dark:text-gray-300'>
+              <label className='flex items-center text-slate-700 dark:text-slate-300'>
                 <input
                   type='radio'
                   value='rust'
@@ -371,7 +371,7 @@ export const RegexTester: React.FC = () => {
                 />
                 Rust
               </label>
-              <label className='flex items-center text-gray-700 dark:text-gray-300'>
+              <label className='flex items-center text-slate-700 dark:text-slate-300'>
                 <input
                   type='radio'
                   value='re2'
@@ -381,7 +381,7 @@ export const RegexTester: React.FC = () => {
                 />
                 RE2
               </label>
-              <label className='flex items-center text-gray-700 dark:text-gray-300'>
+              <label className='flex items-center text-slate-700 dark:text-slate-300'>
                 <input
                   type='radio'
                   value='pcre'
@@ -391,7 +391,7 @@ export const RegexTester: React.FC = () => {
                 />
                 PCRE
               </label>
-              <label className='flex items-center text-gray-700 dark:text-gray-300'>
+              <label className='flex items-center text-slate-700 dark:text-slate-300'>
                 <input
                   type='radio'
                   value='golang'
@@ -401,7 +401,7 @@ export const RegexTester: React.FC = () => {
                 />
                 Golang
               </label>
-              <label className='flex items-center text-gray-700 dark:text-gray-300'>
+              <label className='flex items-center text-slate-700 dark:text-slate-300'>
                 <input
                   type='radio'
                   value='javascript'
@@ -416,11 +416,11 @@ export const RegexTester: React.FC = () => {
 
           {/* 模式选择 */}
           <div className='space-y-2'>
-            <label className='block text-sm font-medium text-gray-700 dark:text-gray-300'>
+            <label className='block text-sm font-medium text-slate-700 dark:text-slate-300'>
               操作模式
             </label>
             <div className='flex gap-4'>
-              <label className='flex items-center text-gray-700 dark:text-gray-300'>
+              <label className='flex items-center text-slate-700 dark:text-slate-300'>
                 <input
                   type='radio'
                   value='test'
@@ -432,7 +432,7 @@ export const RegexTester: React.FC = () => {
                 />
                 测试匹配
               </label>
-              <label className='flex items-center text-gray-700 dark:text-gray-300'>
+              <label className='flex items-center text-slate-700 dark:text-slate-300'>
                 <input
                   type='radio'
                   value='replace'
@@ -450,7 +450,7 @@ export const RegexTester: React.FC = () => {
           {/* 正则表达式输入 */}
           <div className='space-y-2'>
             <div className='flex items-center justify-between'>
-              <label className='block text-sm font-medium text-gray-700 dark:text-gray-300'>
+              <label className='block text-sm font-medium text-slate-700 dark:text-slate-300'>
                 正则表达式
                 {isValidPattern === true && (
                   <span className='ml-2 text-green-600 text-xs'>
@@ -483,7 +483,7 @@ export const RegexTester: React.FC = () => {
           {/* 替换文本输入 */}
           {mode === 'replace' && (
             <div className='space-y-2'>
-              <label className='block text-sm font-medium text-gray-700 dark:text-gray-300'>
+              <label className='block text-sm font-medium text-slate-700 dark:text-slate-300'>
                 替换文本
               </label>
               <InputField
@@ -492,7 +492,7 @@ export const RegexTester: React.FC = () => {
                 placeholder='输入替换文本...'
                 className='font-mono'
               />
-              <label className='flex items-center text-gray-700 dark:text-gray-300'>
+              <label className='flex items-center text-slate-700 dark:text-slate-300'>
                 <input
                   type='checkbox'
                   checked={replaceAll}
@@ -506,11 +506,11 @@ export const RegexTester: React.FC = () => {
 
           {/* 正则标志 */}
           <div className='space-y-2'>
-            <label className='block text-sm font-medium text-gray-700 dark:text-gray-300'>
+            <label className='block text-sm font-medium text-slate-700 dark:text-slate-300'>
               正则标志
             </label>
             <div className='grid grid-cols-2 gap-2'>
-              <label className='flex items-center text-sm text-gray-700 dark:text-gray-300'>
+              <label className='flex items-center text-sm text-slate-700 dark:text-slate-300'>
                 <input
                   type='checkbox'
                   checked={flags.case_insensitive}
@@ -519,7 +519,7 @@ export const RegexTester: React.FC = () => {
                 />
                 忽略大小写 (i)
               </label>
-              <label className='flex items-center text-sm text-gray-700 dark:text-gray-300'>
+              <label className='flex items-center text-sm text-slate-700 dark:text-slate-300'>
                 <input
                   type='checkbox'
                   checked={flags.multiline}
@@ -528,7 +528,7 @@ export const RegexTester: React.FC = () => {
                 />
                 多行模式 (m)
               </label>
-              <label className='flex items-center text-sm text-gray-700 dark:text-gray-300'>
+              <label className='flex items-center text-sm text-slate-700 dark:text-slate-300'>
                 <input
                   type='checkbox'
                   checked={flags.dot_matches_new_line}
@@ -537,7 +537,7 @@ export const RegexTester: React.FC = () => {
                 />
                 . 匹配换行 (s)
               </label>
-              <label className='flex items-center text-sm text-gray-700 dark:text-gray-300'>
+              <label className='flex items-center text-sm text-slate-700 dark:text-slate-300'>
                 <input
                   type='checkbox'
                   checked={flags.swap_greed}
@@ -546,7 +546,7 @@ export const RegexTester: React.FC = () => {
                 />
                 非贪婪模式 (U)
               </label>
-              <label className='flex items-center text-sm text-gray-700 dark:text-gray-300'>
+              <label className='flex items-center text-sm text-slate-700 dark:text-slate-300'>
                 <input
                   type='checkbox'
                   checked={flags.unicode}
@@ -584,7 +584,7 @@ export const RegexTester: React.FC = () => {
 
       {/* 测试文本输入区域 */}
       <div className='flex-1 flex flex-col min-h-0'>
-        <h3 className='text-lg font-medium text-gray-700 dark:text-gray-300 mb-4'>
+        <h3 className='text-lg font-medium text-slate-700 dark:text-slate-300 mb-4'>
           测试文本
         </h3>
         <div className='flex-1 relative'>
@@ -605,10 +605,10 @@ export const RegexTester: React.FC = () => {
             value={testText}
             onChange={(e) => setTestText(e.target.value)}
             placeholder='输入要测试的文本...'
-            className={`w-full h-full p-3 border rounded-lg font-mono text-sm border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none relative z-20 ${
+            className={`w-full h-full p-3 border rounded-lg font-mono text-sm border-slate-300 dark:border-slate-600 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none relative z-20 ${
               highlightedText
-                ? 'bg-transparent text-gray-900 dark:text-gray-100'
-                : 'bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100'
+                ? 'bg-transparent text-slate-900 dark:text-slate-100'
+                : 'bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100'
             }`}
             style={{
               backgroundColor: highlightedText ? 'transparent' : undefined,
@@ -621,10 +621,10 @@ export const RegexTester: React.FC = () => {
 
   const rightContent = (
     <div className='h-full flex flex-col'>
-      <h3 className='text-lg font-medium text-gray-700 dark:text-gray-300 mb-4'>
+      <h3 className='text-lg font-medium text-slate-700 dark:text-slate-300 mb-4'>
         {mode === 'test' ? '匹配结果' : '替换结果'}
       </h3>
-      <div className='flex-1 border rounded-lg p-4 bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 overflow-auto'>
+      <div className='flex-1 border rounded-lg p-4 bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-600 text-slate-900 dark:text-slate-100 overflow-auto'>
         {mode === 'test' ? renderTestResult() : renderReplaceResult()}
       </div>
     </div>
