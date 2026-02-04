@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import AesCrypto from './tools/AesCrypto'
 import Base64Converter from './tools/Base64Converter'
 import PemCertificateViewer from './tools/CertificateViewer'
+import DnsResolver from './tools/DnsResolver'
 import FormatConverter from './tools/FormatConverter'
 import ImageConverter from './tools/ImageConverter'
+import ImagePreview from './tools/ImagePreview'
 import IpInfo from './tools/IpInfo'
 import JsonFormatter from './tools/JsonFormatter'
 import JsonToGo from './tools/JsonToGo'
@@ -71,6 +73,7 @@ const toolCategories: ToolCategory[] = [
     tools: [
       { id: 'subnetcalculator', name: '子网掩码计算器' },
       { id: 'ipinfo', name: 'IP 地址信息查询' },
+      { id: 'dnsresolver', name: 'DNS 解析工具' },
       { id: 'whois', name: '域名 Whois 查询' },
     ],
   },
@@ -92,6 +95,7 @@ const toolCategories: ToolCategory[] = [
     icon: '🎬',
     tools: [
       { id: 'imageconverter', name: '图片格式转换' },
+      { id: 'imagepreview', name: '图片预览器' },
       { id: 'videoconverter', name: '视频格式转换' },
     ],
   },
@@ -125,12 +129,14 @@ const Toolbox: React.FC = () => {
     | 'pfxtopem'
     | 'subnetcalculator'
     | 'ipinfo'
+    | 'dnsresolver'
     | 'whois'
     | 'sslchecker'
     | 'jsonformatter'
     | 'jsontogo'
     | 'formatconverter'
     | 'imageconverter'
+    | 'imagepreview'
     | 'videoconverter'
     | 'sqltogo'
     | 'sqltoent'
@@ -222,12 +228,14 @@ const Toolbox: React.FC = () => {
         {activeTool === 'pfxtopem' && <PfxToPemConverter />}
         {activeTool === 'subnetcalculator' && <SubnetCalculator />}
         {activeTool === 'ipinfo' && <IpInfo />}
+        {activeTool === 'dnsresolver' && <DnsResolver />}
         {activeTool === 'whois' && <WhoisLookup />}
         {activeTool === 'sslchecker' && <SslChecker />}
         {activeTool === 'jsonformatter' && <JsonFormatter />}
         {activeTool === 'jsontogo' && <JsonToGo />}
         {activeTool === 'formatconverter' && <FormatConverter />}
         {activeTool === 'imageconverter' && <ImageConverter />}
+        {activeTool === 'imagepreview' && <ImagePreview />}
         {activeTool === 'videoconverter' && <VideoConverter />}
         {activeTool === 'timestamp' && <TimestampConverter />}
         {activeTool === 'regextester' && <RegexTester />}

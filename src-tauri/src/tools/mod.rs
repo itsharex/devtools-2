@@ -1,6 +1,7 @@
 pub mod autostart;
 pub mod certificate_converter;
 pub mod certificate_viewer;
+pub mod dns_resolver;
 pub mod global_shortcut;
 pub mod image_converter;
 pub mod ip_info;
